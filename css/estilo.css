@@ -1,0 +1,334 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body,html{
+	height:100%;
+	background:#F3F3F3;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.form{
+	background:#FFF;
+	border: 1px solid #e7e7e7;;
+	border-bottom:solid 8px #E4E6E5;
+	border-radius:10px;
+	padding:0 32px 32px 32px;
+}
+
+.form table{
+	width:100%;
+}
+
+.form label{
+	display:block;
+	color: #818C88;
+	margin-bottom:3px;
+	margin-left:10px;
+}
+
+.form legend{
+	background:#879393;
+	color:#FFF;
+	padding:15px;
+	min-width:155px;
+	border-radius:5px;
+	font-weight:bold;
+	text-align:center;
+	font-size:18px;
+	margin-left:-10px;
+}
+
+.form input[type='text']{
+	font-size:16px;
+	padding:8px 6px;
+	margin-bottom: 20px;
+	background:#E6E6E6;
+	border-radius:5px;
+	border-top:solid 2px #DADADA;
+	border-right:none;
+	border-bottom:none;
+	border-left:solid 3px #DADADA;
+	width:94%;
+}
+
+.form input[type='password']{
+	font-size:16px;
+	padding:8px 6px;
+	margin-bottom: 20px;
+	background:#E6E6E6;
+	border-radius:5px;
+	border-top:solid 2px #DADADA;
+	border-right:none;
+	border-bottom:none;
+	border-left:solid 3px #DADADA;
+	width:94%;
+}
+
+.form td{
+	padding-right:10px;
+	padding-top:10px;
+}
+
+.btn-submit{
+	background:#76C7C0;
+	color:#FFF;
+	font-weight:bold;
+	border-top:none;
+	border-bottom:solid 4px #53ADA4;
+	border-left:none;
+	border-right:none;
+	border-radius:5px;
+	font-size:16px;
+	padding:13px 20px;
+	min-width:190px;
+	cursor: pointer;
+}
+
+.btn-cancel{
+	background:#E8635A;
+	color:#FFF;
+	font-weight:bold;
+	border-top:none;
+	border-bottom:solid 4px #E3534B;
+	border-left:none;
+	border-right:none;
+	border-radius:5px;
+	font-size:16px;
+	padding:13px 20px;
+	min-width:190px;
+	cursor: pointer;
+}
+
+.btn-cerrar{
+	background:#E8635A;
+	color:#FFF;
+	font-weight:bold;
+	border-top:none;
+	border-bottom:solid 4px #E3534B;
+	border-left:none;
+	border-right:none;
+	border-radius:5px;
+	font-size:14px;
+	padding:10px 15px;
+	min-width:150px;
+	margin-top:-70px;
+	cursor: pointer;
+}
+
+.clearfix{
+	clear:both;
+}
+
+.floatLeft{
+	float:left;
+}
+.floatRight{
+	float:right;
+}
+
+.userList li .fa{
+	color:#B1B9BB;
+	margin-right:6px;
+}
+.userList li{
+	color: #818C88;
+	list-style:none;
+	border-bottom:1px solid #AFB7B9;
+	width:100%;
+	padding: 16px 0 16px 10px;
+}
+
+#content{
+	width:1024px;
+	margin:30px auto;
+	min-height:600px;
+	margin-bottom:150px;
+	overflow: hidden;
+}
+
+#main{
+	width:100%;
+	min-width:1024px;
+	height: auto;
+	min-height:100%;
+	overflow: hidden;
+}
+
+#main:after{
+	width: 100%;
+	height:150px;
+	display:block;
+	clear:both;
+}
+
+#footer{
+	height: 150px;
+	margin: -150px auto 0;
+	background:#76C7C0;
+}
+
+#header{
+	/*height:150px;
+	padding-top:44px;*/
+	background:#76C7C0;
+	min-width:1024px;
+}
+
+#logo{
+	background:url(../images/logo.png) no-repeat;
+	margin:auto;
+	height:94px;
+	width:290px;
+}
+
+.select
+{
+	font-size:16px;
+	padding:8px 6px;
+	background:#E6E6E6;
+	border-radius:5px;
+	border-top:solid 2px #DADADA;
+	border-right:none;
+	border-bottom:none;
+	border-left:solid 3px #DADADA;
+	width:95%;
+}
+
+.caso-exito
+{
+	width:100%;
+	margin:10px 0px 0px 10px;
+}
+
+.titulo
+{
+	font-size:22px;
+	font-weight:bold;
+}
+
+.img-menu
+{
+	width:100px;
+	margin-top:20px;
+}
+
+.menu
+{
+	height:300px;
+}
+
+.text-menu
+{
+	height:150px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.header-contenedor
+{
+	width:1024px;
+	margin:auto;
+	display:block;
+	font-size:14px;
+}
+
+.prefooter
+{
+	background-color:#76C7C0;
+	width:100%;
+	height:150px;
+}
+
+.footer-contenedor
+{
+	width:1024px;
+	margin:auto;
+	padding:18px 0 10px 0;
+	display:block;
+	font-size:14px;
+}
+
+.prefooter-seccion
+{
+	width:250px;
+	float:left;
+	padding-right:30px;
+	color:white;
+}
+
+.prefooter-logo
+{
+	padding-top:25px;
+	float:right;
+}
+
+.h3-prefooter
+{
+	padding-bottom:5px;
+	color:black;
+}
+
+.footer
+{
+	background-color:#6BB4AD;
+	width:100%;
+	height:53px;
+	display:block;
+	color:white;
+}
+
+.footer-logo
+{
+	float:right;
+	margin-top:-6px;
+	padding-left:5px;
+	padding-right:20px;
+}
+
+.navbar
+{
+	position: relative;
+  	height: 50px;
+  	margin-bottom: 20px;
+  	border: 1px solid #e7e7e7;
+    background-color: #f8f8f8;
+ }
+
+ .nav 
+ {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  height: 50px;
+}
+
+.nav > li
+{
+	width: 100px;
+	height: 50px;
+	text-align: center;
+	display: inline-block;
+}
+
+.nav-contenedor
+{
+	width:1024px;
+	margin:auto;
+	display:block;
+}
+
+.nav > li > a
+{
+	line-height: 50px;
+	text-decoration: none;
+	color: #000;
+	font-size: 18px;
+}
+
+li:hover
+{
+	background: #E6E6E6;
+	height: 50px;
+}
