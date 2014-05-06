@@ -172,7 +172,7 @@
 				var colonia = $('#colonia_casa').val();
 				var calle = $('#calle_casa').val();
 				var numero = $('#numero_casa').val();
-				if(!familia == "" || !estado == "" || !municipio == "" || !colonia == "" || !calle == "" || !numero == ""){
+				if(!familia == "" && !estado == "" && !municipio == "" && !colonia == "" && !calle == "" && !numero == ""){
 					$.ajax({
 						type: "POST",
 						url: "http://localhost/ecolonia/index.php/administrador/registrar_casa",
@@ -185,7 +185,8 @@
 					$('#registrar_casa').attr('disabled','disabled');
 					$('#registrar_datos').removeClass('oculto');
 				} else{
-					alert('entro else');
+					$('#texto_alert').html("Ingrese los datos requeridos");
+					$('#alert').modal('show')
 				}
 			});
 
@@ -221,3 +222,16 @@
 				$("#integrantes").html(cadena);
 			});
 		</script>
+		<div class="modal dialogo fade" id="alert">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Error..!!</h4>
+					</div>
+					<div class="modal-body">
+						<p id="texto_alert"></p>
+						<input type="button" value="Aceptar" data-dismiss="modal">
+					</div>
+				</div>
+			</div>
+		</div>
