@@ -19,16 +19,18 @@
 								<div class="lineal">
 									<div class="grupo x5">
 										<label for="">Estado:</label>
-										<select name="" id="estado_casa">
-											<option value=""></option>
-											<option value="1">Colima</option>
+										<select  onchange="getMunicipio(this.value)" name="estado_id" id="estado">
+											<option value="">Selecciona Estado</option>
+											<?php foreach($estado->result() as $estado){?>
+											<option value="<?php echo $estado->Id?>"><?php echo $estado->Nombre?></option>
+											<?php }?>
 										</select>
 									</div>
 									<div class="grupo x5">
 										<label for="">Municipio:</label>
-										<select name="" id="municipio_casa">
-											<option value=""></option>
-											<option value="1">Colima</option>
+										<select name="" id="municipio">
+											<option value="">Selecciona Municipio</option>
+											
 										</select>
 									</div>
 									<div class="grupo x5">
