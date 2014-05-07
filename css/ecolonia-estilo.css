@@ -120,7 +120,8 @@ article {
 }
 .panel input[type='text'],
 input[type='password'],
-input[type='number'] {
+input[type='number'],
+textarea {
     font-size: 16px;
     padding: 8px 6px;
     background: #E6E6E6;
@@ -130,6 +131,7 @@ input[type='number'] {
     border-bottom: none;
     border-left: solid 3px #DADADA;
     width: 100%;
+    resize: none;
 }
 .panel select {
     font-size: 16px;

@@ -4,7 +4,7 @@
 				<article>
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<fieldset class="panel lineal">
+							<fieldset class="panel">
 								<legend>DOMICILIO</legend>
 								<div class="lineal">
 									<div class="grupo x3">
@@ -185,8 +185,9 @@
 					$('#registrar_casa').attr('disabled','disabled');
 					$('#registrar_datos').removeClass('oculto');
 				} else{
+					$('#titulo_alert').html("Error..!!");
 					$('#texto_alert').html("Ingrese los datos requeridos");
-					$('#alert').modal('show')
+					$('#alert').modal('show');
 				}
 			});
 
@@ -212,6 +213,13 @@
 					url: "http://localhost/ecolonia/index.php/administrador/resibe_datos_colono",
 					data: {colonos:array_colonos},
 					success: function(msg){
+						if(msg = "true"){
+							$('#titulo_alert').html("Aviso");
+							$('#texto_alert').html("Los datos se guardaron correctamente");
+							$('#alert').modal('show');
+						} else{
+
+						}
 					}
 				});
 			});
@@ -226,7 +234,7 @@
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h4 class="modal-title">Error..!!</h4>
+						<h4 class="modal-title" id="titulo_alert"></h4>
 					</div>
 					<div class="modal-body">
 						<p id="texto_alert"></p>

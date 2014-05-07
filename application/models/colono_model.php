@@ -18,4 +18,12 @@ class Colono_model extends CI_Model{
 						->set('Tel_celular',$Tel_celular)
 						->insert('colono');
 	}
+
+	public function obtiene_id($Email,$Tel_celular)
+	{
+		return $this->db->like('Email',$Email)
+						->like('Tel_celular',$Tel_celular)
+						->get('colono')
+						->row();
+	}
 }
