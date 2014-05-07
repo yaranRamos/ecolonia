@@ -9,6 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/miJs.js"></script>
 		<meta charset="UTF-8"/>
 	</head>
 	<body>

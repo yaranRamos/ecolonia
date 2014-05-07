@@ -6,6 +6,8 @@ class Administrador extends CI_Controller {
 		parent::__construct();
 		$this->load->model('casa_model');
 		$this->load->model('colono_model');
+		$this->load->model('estado_model');
+		$this->load->model('municipio_model');
 	}
 
 	public function index()
@@ -24,8 +26,13 @@ class Administrador extends CI_Controller {
 
 	public function registrar_colono()
 	{
+		// Cargamos todos lo estados de la base de datos
+		$estados = $this->estado_model->get_estados();
+		$data = array(
+			'estado' => $estados
+		);
 		$this->load->view('administrador/header_admon');
-		$this->load->view('administrador/registrar_colono');
+		$this->load->view('administrador/registrar_colono',$data);
 		$this->load->view('administrador/footer_admon');
 	}
 
@@ -93,6 +100,14 @@ class Administrador extends CI_Controller {
 		} else{
 			$resp = false;
 			echo json_encode($resp);
+		}
+	}
+
+	public function get_municipios(){
+		if($this->input->post()){
+			$id_estado = $this->input->post('estado_id');
+			$municipios = $this->municipio_model->get_municipios($id_estado);
+			echo json_encode($municipios);
 		}
 	}
 }
