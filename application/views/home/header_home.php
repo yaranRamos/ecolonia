@@ -15,13 +15,3 @@
 		<header>
 			<div id="logo"></div>
 		</header>
-		<nav>
-			<div class="container">
-				<ul class="navbar">
-					<li><a href="">Inicio</a></li>
-					<li><a href="">Opción 1</a></li>
-					<li><a href="">Opción 2</a></li>
-					<li><a href="<?php echo site_url('ecolonia/iniciar_sesion'); ?>">Iniciar Sesión</a></li>
-				</ul>
-			</div>
-		</nav>

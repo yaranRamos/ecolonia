@@ -30,4 +30,17 @@ class Ecolonia extends CI_Controller {
 		$this->load->view('home/footer_home');
 	}
 	
+	public function logueo(){
+		if($this->input->post()){
+			if($this->input->post('tipo_usuario') == 1){
+				redirect('administrador');
+			} elseif($this->input->post('tipo_usuario') == 2){
+				redirect('presidente');
+			} else{
+				$this->load->view('home/header_home');
+				$this->load->view('home/iniciar_sesion');
+				$this->load->view('home/footer_home');
+			}
+		}
+	}
 }

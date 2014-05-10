@@ -3,7 +3,7 @@
 				<article>
 					<form action="">
 						<div class="row">
-							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 								<fieldset class="panel">
 									<legend>LOCALIDAD</legend>
 										<label>Estado:</label>
@@ -12,15 +12,23 @@
 										<select name="" id="" class="select"></select>
 								</fieldset>
 							</div>
-							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
 								<fieldset class="panel">
 									<legend>CONTACTO</legend>
-									<label>Nombre:</label>
-									<input type="text" />
-									<label>Apellido Paterno:</label>
-									<input type="text" />
-									<label>Apellido Materno:</label>
-									<input type="text" />
+									<div class="lineal">
+										<div class="grupo x3">
+											<label>Nombre:</label>
+											<input type="text" />
+										</div>
+										<div class="grupo x3">
+											<label>Apellido Paterno:</label>
+											<input type="text" />
+										</div>
+										<div class="grupo x3 sin-padding">
+											<label>Apellido Materno:</label>
+											<input type="text" />
+										</div>
+									</div>
 									<label>Cargo:</label>
 									<input type="text" />
 									<label>E-mail:</label>

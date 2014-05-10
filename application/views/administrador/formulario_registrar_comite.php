@@ -4,16 +4,21 @@
 					<form action="">
 						<div class="row">
 							
-							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-								
+							<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 								<fieldset class="panel">
 									<legend>COMITE DE BARRIO</legend>
-										<label>Fecha de fundación:</label>
-										<input id="fundacion" type="date" />
 										<label>Nombre:</label>
 										<input id="comite" type="text" />
-										<label>Numero de integrantes:</label>
-										<input id="integrantes" type="text" />
+										<div class="lineal">
+											<div class="grupo x2">
+												<label>No. de integrantes:</label>
+												<input id="integrantes" type="text" />
+											</div>
+											<div class="grupo x2 sin-padding">
+												<label>Fecha de fundación:</label>
+												<input id="fundacion" type="text" />
+											</div>
+										</div>
 										<label>Estado:</label>
 										<select name="" id="estado" class="select">
 											<option value="1">Colima</option>
@@ -27,44 +32,68 @@
 											<option value="1">La Albarrada</option>
 										</select>	
 								</fieldset>
-							
 							</div>
-
-							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
 								<fieldset class="panel">
 									<legend>PRESIDENTE</legend>
-									<label>Nombre:</label>
-									<input id="nombre" type="text" />
-									<label>Apellido Paterno:</label>
-									<input id="apaterno" type="text" />
-									<label>Apellido Materno:</label>
-									<input id="amaterno" type="text" />
-										<label>Sexo:</label>
-										<select name="" id="sexo_colono" class="select">
-											<option value=""></option>
-											<option value="F">Femenino</option>
-											<option value="M">Masculino</option>
-										</select>
-									<label>E-mail:</label>
-									<input id="correo" type="text" />
+									<div class="lineal">
+										<div class="grupo x3">
+											<label>Nombre:</label>
+											<input id="nombre" type="text" />
+										</div>
+										<div class="grupo x3">
+											<label>Apellido Paterno:</label>
+											<input id="apaterno" type="text" />
+										</div>
+										<div class="grupo x3 sin-padding">
+											<label>Apellido Materno:</label>
+											<input id="amaterno" type="text" />
+										</div>
+									</div>
+									<div class="lineal">
+										<div class="grupo x4">
+											<label>Sexo:</label>
+											<select name="" id="sexo_colono" class="select">
+												<option value=""></option>
+												<option value="F">Femenino</option>
+												<option value="M">Masculino</option>
+											</select>
+										</div>
+										<div class="grupo x-4 sin-padding">
+											<label>E-mail:</label>
+											<input id="correo" type="text" />
+										</div>
+									</div>
 									<label>Telefono Celular:</label>
 									<input id="cel" type="text" />
-									<label>Calle:</label>
-									<input id="calle" type="text" />
-									<label>Numero:</label>
-									<input id="numero" type="text" />
-
+									<div class="lieneal">
+										<div class="grupo x-4">
+											<label>Calle:</label>
+											<input id="calle" type="text" /></div>
+										<div class="grupo x4 sin-padding">
+											<label>Numero:</label>
+											<input id="numero" type="text" />
+										</div>
+									</div>
 									<input type="button" value="AGREGAR" id="registrar_comite"/>
 								</fieldset>
 							</div>
-
 						</div>
 					</form>
 				</article>
 			</div>
 		</section>
-			<script>
-
+		<script type="text/javascript" src="js/datepicker.js"></script>
+		<script type="text/javascript" src="js/datepicker.es.js"></script>
+		<script>
+			$('#fundacion').datepicker({
+				language: "es",
+				orientation: "bottom auto",
+				autoclose: true,
+				todayHighlight: true,
+				format: "mm-dd-yyyy",
+				startView: 2
+			});
 			$('#registrar_comite').click(function(){
 				var fundacion = $('#fundacion').val();
 				var comite = $('#comite').val();
@@ -94,8 +123,8 @@
 					$('#alert').modal('show')
 				}
 			});
-			</script>
-<div class="modal dialogo fade" id="alert">
+		</script>
+		<div class="modal dialogo fade" id="alert">
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -107,4 +136,4 @@
 					</div>
 				</div>
 			</div>
-</div>
+		</div>

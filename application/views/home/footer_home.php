@@ -1,33 +1,4 @@
 		<footer>
-			<section class="prefooter">
-				<div class="container">
-					<article>
-						<div class="row">
-							<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-								<h3>Seccion uno</h3>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, vel assumenda id voluptatem eligendi nam delectus maiores aspernatur nobis vero voluptates autem doloremque architecto.
-								</p>
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-								<h3>Seccion dos</h3>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, vel assumenda id voluptatem eligendi nam delectus maiores aspernatur nobis vero voluptates autem doloremque architecto.
-								</p>
-							</div>
-							<div class=" col-xs-3 col-sm-3col-md-3 col-lg-3">
-								<h3>Seccion tres</h3>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, vel assumenda id voluptatem eligendi nam delectus maiores aspernatur nobis vero voluptates autem doloremque architecto.
-								</p>
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-								
-							</div>
-						</div>
-					</article>
-				</div>
-			</section>
 			<section class="footer">
 				<div class="container">
 					<article>

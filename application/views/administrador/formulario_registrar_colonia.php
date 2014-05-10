@@ -4,29 +4,37 @@
 					<fieldset class="panel">
 						<legend>Colonia</legend>
 						<div class="lineal">
-							<div class="grupo x2">
+							<div class="grupo x3">
 								<label for="">Estado</label>
 								<select name="" id="estado">
 									<option value=""></option>
 									<option value="1">Colima</option>
 								</select>
 							</div>
-							<div class="grupo x2">
+							<div class="grupo x3">
 								<label for="">Municipio</label>
 								<select name="" id="municipio">
 									<option value=""></option>
 									<option value="1">Colima</option>
 								</select>
 							</div>
-						</div>
-						<div class="lineal">
-							<div class="grupo x2">
+							<div class="grupo x3 sin-pading">
 								<label for="">Nombre de la colonia</label>
 								<input type="text" id="nombre">
 							</div>
-							<div class="grupo x2">
+						</div>
+						<div class="lineal">
+							<div class="grupo x3">
+								<label for="">Fecha Fundacion:</label>
+								<input type="text" id="fecha">
+							</div>
+							<div class="grupo x3">
 								<label for="">Ubicacion</label>
 								<input type="text" id="ubicacion">
+							</div>
+							<div class="grupo x3">
+								<label for="">Extencion geografica</label>
+								<input type="text" id="extencion">
 							</div>
 						</div>
 						<div class="lineal">
@@ -35,10 +43,7 @@
 								<textarea name="" id="diagnostico" cols="30" rows="5"></textarea>
 							</div>
 							<div class="grupo x2">
-								<label for="">Extencion geografica</label>
-								<input type="text" id="extencion">
 								<label for="">Croquis</label>
-								<input type="file">
 							</div>
 						</div>
 						<div class="x4 derecha">
@@ -48,7 +53,17 @@
 				</div>
 			</div>
 		</section>
+		<script type="text/javascript" src="js/datepicker.js"></script>
+		<script type="text/javascript" src="js/datepicker.es.js"></script>
 		<script>
+			$('#fecha').datepicker({
+				language: "es",
+				orientation: "bottom auto",
+				autoclose: true,
+				todayHighlight: true,
+				format: "mm-dd-yyyy",
+				startView: 2
+			});
 			$('#registrar_colonia').click(function(){
 				var estado = $('#estado').val();
 				var municipio = $('#municipio').val();

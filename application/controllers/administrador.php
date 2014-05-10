@@ -14,48 +14,31 @@ class Administrador extends CI_Controller {
 		$this->load->model('municipio_model');
 	}
 
-	public function index()
-	{
+	public function index()	{
 		$this->load->view('administrador/header_admon');
 		$this->load->view('administrador/menu_admon');
 		$this->load->view('administrador/footer_admon');
 	}
 
-	public function menu_estructura()
-	{
+	public function menu_estructura(){
 		$this->load->view('administrador/header_admon');
 		$this->load->view('administrador/menu_estructura');
 		$this->load->view('administrador/footer_admon');
 	}
 
-	public function registrar_colono()
-	{
-		// Cargamos todos lo estados de la base de datos
-		$estados = $this->estado_model->get_estados();
-		$data = array(
-			'estado' => $estados
-		);
+	public function formulario_registrar_ayuntamiento(){
 		$this->load->view('administrador/header_admon');
-		$this->load->view('administrador/registrar_colono',$data);
+		$this->load->view('administrador/formulario_registrar_ayuntamiento');
 		$this->load->view('administrador/footer_admon');
 	}
 
-	public function registrar_ayuntamiento()
-	{
+	public function formulario_registrar_comite(){
 		$this->load->view('administrador/header_admon');
-		$this->load->view('administrador/registrar_ayuntamiento');
+		$this->load->view('administrador/formulario_registrar_comite');
 		$this->load->view('administrador/footer_admon');
 	}
 
-	public function registrar_comite()
-	{
-		$this->load->view('administrador/header_admon');
-		$this->load->view('administrador/registrar_comite');
-		$this->load->view('administrador/footer_admon');
-	}
-
-	public function registrar()
-	{
+	public function registrar(){
 		$this->load->view('administrador/header_admon');
 		$this->load->view('administrador/registrar');
 		$this->load->view('administrador/footer_admon');
@@ -102,6 +85,7 @@ class Administrador extends CI_Controller {
 			echo json_encode($resp);
 		}
 	}
+	
 	public function resibe_datos_colono(){
 		if($this->input->post()){
 			$datos = $this->input->post('colonos');
