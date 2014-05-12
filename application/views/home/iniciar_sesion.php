@@ -30,18 +30,6 @@
 				</article>
 			</div>
 		</section>
-		<script>
-			$('#form_sesion').submit(function(event){
-				if($('#tipo_usuario').val() == ""){
-					$('#titulo_alert').html("Error..!!");
-					$('#texto_alert').html("Ingrese los datos requeridos");
-					$('#alert').modal('show');
-					event.preventDefault();
-				} else{
-					return;
-				}
-			});
-		</script>
 		<div class="modal dialogo fade" id="alert">
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">

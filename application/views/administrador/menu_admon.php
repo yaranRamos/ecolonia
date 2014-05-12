@@ -11,7 +11,7 @@
 										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, nesciunt, 
 										qui, molestiae illo ex vero ducimus soluta deserunt accusantium debitis suscipit
 									</p>
-									<form action="<?php echo base_url('index.php/administrador/menu_estructura'); ?>" method="POST">
+									<form action="<?php echo site_url('administrador/menu_estructura'); ?>" method="POST">
 										<input type="submit" value="ENTRAR"/>
 									</form>
 								</center>

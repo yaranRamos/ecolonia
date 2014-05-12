@@ -27,14 +27,24 @@ class Administrador extends CI_Controller {
 	}
 
 	public function formulario_registrar_ayuntamiento(){
+		// Obtenemos estados y los mandamos a la vista
+		$estados = $this->estado_model->get_estados();
+		$data = array(
+			'estado' => $estados
+		);
 		$this->load->view('administrador/header_admon');
-		$this->load->view('administrador/formulario_registrar_ayuntamiento');
+		$this->load->view('administrador/formulario_registrar_ayuntamiento',$data);
 		$this->load->view('administrador/footer_admon');
 	}
 
 	public function formulario_registrar_comite(){
+		// Obtenemos estados y los mandamos a la vista
+		$estados = $this->estado_model->get_estados();
+		$data = array(
+			'estado' => $estados
+		);
 		$this->load->view('administrador/header_admon');
-		$this->load->view('administrador/formulario_registrar_comite');
+		$this->load->view('administrador/formulario_registrar_comite',$data);
 		$this->load->view('administrador/footer_admon');
 	}
 
@@ -45,8 +55,13 @@ class Administrador extends CI_Controller {
 	}
 
 	public function formulario_registrar_colonia(){
+		// Obtenemos estados y los mandamos a la vista
+		$estados = $this->estado_model->get_estados();
+		$data = array(
+			'estado' => $estados
+		);
 		$this->load->view('administrador/header_admon');
-		$this->load->view('administrador/formulario_registrar_colonia');
+		$this->load->view('administrador/formulario_registrar_colonia',$data); 
 		$this->load->view('administrador/footer_admon');
 	}
 
@@ -168,6 +183,12 @@ class Administrador extends CI_Controller {
 			$id_estado = $this->input->post('estado_id');
 			$municipios = $this->municipio_model->get_municipios($id_estado);
 			echo json_encode($municipios);
+		}
+	}
+
+	public function logout(){
+		if ($this->input->post()) {
+			redirect('ecolonia');
 		}
 	}
 }

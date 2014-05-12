@@ -20,12 +20,15 @@
 											</div>
 										</div>
 										<label>Estado:</label>
-										<select name="" id="estado" class="select">
-											<option value="1">Colima</option>
+										<select onchange="getMunicipio(this.value)" name="" id="estado" class="select">
+											<option value="">Selecciona Estado</option>
+										<?php foreach($estado->result() as $est){?>
+											<option value="<?php echo $est->Id?>"><?php echo $est->Nombre?></option>
+										<?php }?>
 										</select>
 										<label>Municipio:</label>
 										<select name="" id="municipio" class="select">
-											<option value="1">Colima</option>
+											<option value="">Selecciona Municipio</option>
 										</select>
 										<label>Colonia:</label>
 										<select name="" id="colonia" class="select">

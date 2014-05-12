@@ -1,9 +1,30 @@
+/*
+	Creado por: Shark Soft 
+
+*/
+$(document).ready(formulario);
+
+// funcion valida formulario sesion
+function formulario(){
+$('#form_sesion').submit(function(event){
+				if($('#tipo_usuario').val() == ""){
+					$('#titulo_alert').html("¡REVISA TUS DATOS!");
+					$('#texto_alert').html("Ingresa los datos requeridos");
+					$('#alert').modal('show');
+					event.preventDefault();
+				}else{
+					// se manda post
+					return;
+				}
+});
+}
+
 // Obtenemos los estados
 function getMunicipio(estado_id){
 	var estado = estado_id;
 	var municipios = $("#municipio");
 	// cargamos con ajax los municipios del estado
-	municipios.find('option').remove().end().append('<option value="">Seleccione Municipio</option>').val('');
+	municipios.find('option').remove().end().append('<option value="">Selecciona Municipio</option>').val('');
 	jQuery.ajax({
 		url:'http://localhost/ecolonia/index.php/administrador/get_municipios',
 		timeout:3000,
@@ -22,3 +43,4 @@ function getMunicipio(estado_id){
 		}
 	});
 }
+

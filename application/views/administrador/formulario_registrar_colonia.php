@@ -6,16 +6,17 @@
 						<div class="lineal">
 							<div class="grupo x3">
 								<label for="">Estado</label>
-								<select name="" id="estado">
-									<option value=""></option>
-									<option value="1">Colima</option>
+								<select onchange="getMunicipio(this.value)" name="" id="estado">
+									<option value="">Selecciona Estado</option>
+									<?php foreach($estado->result() as $est){?>
+									<option value="<?php echo $est->Id?>"><?php echo $est->Nombre?></option>
+									<?php }?>
 								</select>
 							</div>
 							<div class="grupo x3">
 								<label for="">Municipio</label>
 								<select name="" id="municipio">
-									<option value=""></option>
-									<option value="1">Colima</option>
+									<option value="">Selecciona Municipio</option>
 								</select>
 							</div>
 							<div class="grupo x3 sin-pading">
@@ -79,7 +80,7 @@
 						success: function(msg){
 							console.log(msg);
 							if(msg == "true"){
-								$('#titulo_alert').html("Aviso");
+								$('#titulo_alert').html("¡COLONIA REGISTRADA CON EXITO!");
 								$('#texto_alert').html("Registro guardado con exito");
 								$('#alert').modal('show');
 							} else{
@@ -90,8 +91,8 @@
 						}
 					});
 				} else{
-					$('#titulo_alert').html("Error..!!");
-					$('#texto_alert').html("Ingrese los datos requeridos");
+					$('#titulo_alert').html("¡REVISA TUS DATOS!");
+					$('#texto_alert').html("Ingresa los datos requeridos");
 					$('#alert').modal('show');
 				}
 			});

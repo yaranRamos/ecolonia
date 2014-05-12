@@ -2,6 +2,11 @@
 
 class Ecolonia extends CI_Controller {
 
+	public function __construct(){
+		parent::__construct();
+		
+	}
+
 	public function index()
 	{
 		$this->load->view('home/header_home');
@@ -27,7 +32,7 @@ class Ecolonia extends CI_Controller {
 	{
 		$this->load->view('home/header_home');
 		$this->load->view('home/iniciar_sesion');
-		$this->load->view('home/footer_home');
+		$this->load->view('home/footer_home'); 
 	}
 	
 	public function logueo(){
@@ -37,10 +42,10 @@ class Ecolonia extends CI_Controller {
 			} elseif($this->input->post('tipo_usuario') == 2){
 				redirect('presidente');
 			} else{
-				$this->load->view('home/header_home');
-				$this->load->view('home/iniciar_sesion');
-				$this->load->view('home/footer_home');
+				redirect('ecolonia/iniciar_sesion');
 			}
+		}else{
+			redirect('ecolonia/iniciar_sesion');
 		}
 	}
 }

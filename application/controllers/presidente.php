@@ -38,6 +38,7 @@ class Presidente extends CI_Controller {
 	}
 
 	public function formulario_registrar_miembros(){
+		redirect('presidente/menu_estructura');
 		$this->load->view('presidente/header_pres');
 		$this->load->view('presidente/');
 		$this->load->view('presidente/footer_pres');
@@ -56,6 +57,12 @@ class Presidente extends CI_Controller {
 		} else{
 			$resp = false;
 			echo json_encode($resp);
+		}
+	}
+
+	public function logout(){
+		if($this->input->post()){
+		redirect('ecolonia');
 		}
 	}	
 }
