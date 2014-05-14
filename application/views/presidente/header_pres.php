@@ -24,9 +24,6 @@
 					<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
 					</div>
 					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-						<form action="<?php echo site_url('presidente/logout'); ?>" method="POST">
-							<input type="submit" value="SALIR" class="salir" name="salir">
-						</form>
 					</div>
 				</div>
 			</div>

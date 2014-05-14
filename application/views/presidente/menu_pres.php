@@ -1,3 +1,12 @@
+		<nav>
+			<div class="container">
+ 				<ul class="navbar derecha">
+					<a href="<?php echo site_url(); ?>" class="btn btn-iniciar">
+						Cerrar Sesión
+					</a>
+ 				</ul>
+			</div>
+		</nav>
 		<section>
 			<div class="container">
 				<article>

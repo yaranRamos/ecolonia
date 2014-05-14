@@ -1,3 +1,16 @@
+		<nav>
+			<div class="container">
+				<ul class="navbar izquierda">
+ 					<li><a href="<?php echo site_url('administrador'); ?>">Menu</a></li>
+ 					<li><a href="<?php echo site_url('administrador/menu_estructura'); ?>">Estructura</a></li>
+ 				</ul>
+ 				<ul class="navbar derecha">
+					<a href="<?php echo site_url(); ?>" class="btn btn-iniciar">
+						Cerrar Sesión
+					</a>
+ 				</ul>
+			</div>
+		</nav>
 		<section>
 			<div class="container">
 				<div class="col">
@@ -25,21 +38,25 @@
 							</div>
 						</div>
 						<div class="lineal">
-							<div class="grupo x3">
+							<div class="grupo x5">
 								<label for="">Fecha Fundacion:</label>
 								<input type="text" id="fecha">
+							</div>
+							<div class="grupo x5">
+								<label for="">Numero de habitantes:</label>
+								<input type="text" id="habit">
 							</div>
 							<div class="grupo x3">
 								<label for="">Ubicacion</label>
 								<input type="text" id="ubicacion">
 							</div>
-							<div class="grupo x3">
+							<div class="grupo x4">
 								<label for="">Extencion geografica</label>
 								<input type="text" id="extencion">
 							</div>
 						</div>
 						<div class="lineal">
-							<div class="grupo x2">
+							<div class="grupo x2 sin-pading">
 								<label for="">Diagnostico inicial</label>
 								<textarea name="" id="diagnostico" cols="30" rows="5"></textarea>
 							</div>

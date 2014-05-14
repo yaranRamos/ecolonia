@@ -1,3 +1,16 @@
+		<nav>
+			<div class="container">
+				<ul class="navbar izquierda">
+ 					<li><a href="<?php echo site_url('administrador'); ?>">Menu</a></li>
+ 					<li><a href="<?php echo site_url('administrador/menu_estructura'); ?>">Estructura</a></li>
+ 				</ul>
+ 				<ul class="navbar derecha">
+					<a href="<?php echo site_url(); ?>" class="btn btn-iniciar">
+						Cerrar Sesión
+					</a>
+ 				</ul>
+			</div>
+		</nav>
 		<section>
 			<div class="container">
 				<article>

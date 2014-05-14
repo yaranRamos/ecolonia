@@ -1,3 +1,10 @@
+		<nav>
+			<div class="container">
+ 				<ul class="navbar izquierda">
+ 					<li><a href="">Inicio</a></li>
+ 				</ul>
+			</div>
+		</nav>		
 		<section>
 			<div class="container">
 				<article>
