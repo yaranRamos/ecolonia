@@ -36,7 +36,7 @@ function getMunicipio(estado_id){
 		var miJson = jQuery.parseJSON(resp);
 		if(miJson){
 			for(var item in miJson){
-				municipios.append('<option value"' + miJson[item].Id + '">' + miJson[item].Nombre + '</option>');
+				municipios.append('<option value = "' + miJson[item].Id + '">' + miJson[item].Nombre + '</option>');
 			}
 		}else{
 			alert("Algo fallo");

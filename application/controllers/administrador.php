@@ -72,6 +72,10 @@ class Administrador extends CI_Controller {
 			$ubicacion = $this->input->post('ubicacion');
 			$diagnostico = $this->input->post('diagnostico');
 			$extencion = $this->input->post('extencion');
+
+			// Validamos si la colonia existe
+			$colonia = $this->colonia_model->verifica_colonia();
+
 			$colonia = $this->colonia_model->registra_colonia($municipio,$nombre,$ubicacion,$diagnostico,$extencion);
 			echo json_encode($colonia);
 		} else{
