@@ -231,7 +231,9 @@
 							$('#texto_alert').html("Los datos se guardaron correctamente");
 							$('#alert').modal('show');
 						} else{
-
+							$('#titulo_alert').html("Error..!!");
+							$('#texto_alert').html("Error al guardar los datos");
+							$('#alert').modal('show');
 						}
 					}
 				});

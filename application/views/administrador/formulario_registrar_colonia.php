@@ -81,7 +81,7 @@
 				orientation: "bottom auto",
 				autoclose: true,
 				todayHighlight: true,
-				format: "mm-dd-yyyy",
+				format: "yyyy-mm-dd",
 				startView: 2
 			});
 			$('#registrar_colonia').click(function(){
@@ -93,7 +93,7 @@
 				var ubicacion = $('#ubicacion').val();
 				var diagnostico = $('#diagnostico').val();
 				var extencion = $('#extencion').val();
-				if(!estado == "" && !municipio == "" && !nombre == "" && !ubicacion == "" && !fecha == "" && !numHab == "" && !diagnostico == "" && !extencion == ""){
+				if(!estado == "" && !municipio == "" && !nombre == ""){
 					$.ajax({
 						type: "POST",
 						url: "http://localhost/ecolonia/index.php/administrador/registrar_colonia",
@@ -115,7 +115,7 @@
 								$('#alert').modal('show');
 								
 								//Limpiamos los datos
-								//$('#estado').val(); $('#municipio').val(); $('#nombre').val(); $('#fecha').val(); $('#habit').val(); $('#ubicacion').val(); $('#diagnostico').val(); $('#extencion').val();
+								$('#estado').val(""); $('#municipio').val(""); $('#nombre').val(""); $('#fecha').val(""); $('#habit').val(""); $('#ubicacion').val(""); $('#diagnostico').val(""); $('#extencion').val("");
 							} else{
 								$('#titulo_alert').html("ERROR");
 								$('#texto_alert').html("¡ERROR LA COLONIA YA EXISTE!");

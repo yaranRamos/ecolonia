@@ -14,14 +14,13 @@
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 							<fieldset class="panel menu">
 								<center>
-									<img class="img-menu" src="images/01.png">
-									<h3>Estructural</h3>
+									<img class="img-menu" src="media/iconos/iconestructural.png">
+									<h3>ESTRUCTURAL</h3>
 									<p class="text-menu">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, nesciunt, 
-										qui, molestiae illo ex vero ducimus soluta deserunt accusantium debitis suscipit
+										Se establece la estructura base del sistema, determinada por el municipio al que pertenezca la comunidad
 									</p>
-									<form action="<?php echo base_url('index.php/presidente/menu_estructura'); ?>" method="POST">
-										<input type="submit" value="ENTRAR"/>
+									<form action="<?php echo site_url('presidente/menu_estructura'); ?>" method="POST">
+										<input type="submit" value="ENTRAR" class="rojo"/>
 									</form>
 								</center>
 							</fieldset>
@@ -29,14 +28,13 @@
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 							<fieldset class="panel menu">
 								<center>
-									<img class="img-menu" src="images/01.png">
-									<h3>Modulo</h3>
+									<img class="img-menu" src="media/iconos/icongestion.png">
+									<h3>GESTIÓN</h3>
 									<p class="text-menu">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, officiis ex nam 
-										maxime deleniti alias modi cum nisi. Iusto, ipsum, nostrum ullam commodi rerum odit
+										Coordina las gestiones que realiza el Comité de Barrio y la ciudadanía ante las autoridades municipales
 									</p>
 									<form action="">
-										<input type="submit" value="ENTRAR"/>
+										<input type="submit" value="ENTRAR" class=""/>
 									</form>
 								</center>
 							</fieldset>
@@ -44,14 +42,13 @@
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 							<fieldset class="panel menu">
 								<center>
-									<img class="img-menu" src="images/01.png">
-									<h3>Modulo</h3>
+									<img class="img-menu" src="media/iconos/iconambiental.png">
+									<h3>AMBIENTAL</h3>
 									<p class="text-menu">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, dolores, molestiae, 
-										sed ducimus amet eius sequi architecto nihil repudiandae laudantium assumenda ullam
+										Administra todas las actividades, programas y  eventos ambientales que se  organizan en la colonia para promover la cultura ambiental y la participación ciudadana
 									</p>
 									<form action="">
-										<input type="submit" value="ENTRAR"/>
+										<input type="submit" value="ENTRAR" class="verde"/>
 									</form>
 								</center>
 							</fieldset>
@@ -67,14 +64,13 @@
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 							<fieldset class="panel menu">
 								<center>
-									<img class="img-menu" src="images/01.png">
-									<h3>Modulo</h3>
+									<img class="img-menu" src="media/iconos/iconcultura.png">
+									<h3>CULTURA Y DEPORTE</h3>
 									<p class="text-menu">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, officiis ex nam 
-										maxime deleniti alias modi cum nisi. Iusto, ipsum, nostrum ullam commodi rerum odit
+										Coordina las actividades, programas y eventos culturales y deportivos que se realicen en la colonia para elevar la calidad de vida
 									</p>
 									<form action="">
-										<input type="submit" value="ENTRAR"/>
+										<input type="submit" value="ENTRAR" class="naranja"/>
 									</form>
 								</center>
 							</fieldset>
@@ -82,14 +78,13 @@
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 							<fieldset class="panel menu">
 								<center>
-									<img class="img-menu" src="images/01.png">
-									<h3>Modulo</h3>
+									<img class="img-menu" src="media/iconos/iconseguridad.png">
+									<h3>SEGURIDAD</h3>
 									<p class="text-menu">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, officiis ex nam 
-										maxime deleniti alias modi cum nisi. Iusto, ipsum, nostrum ullam commodi rerum odit
+										Coordina acciones para promover la seguridad comunitaria
 									</p>
 									<form action="">
-										<input type="submit" value="ENTRAR"/>
+										<input type="submit" value="ENTRAR" class="aqua"/>
 									</form>
 								</center>
 							</fieldset>
@@ -97,17 +92,54 @@
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 							<fieldset class="panel menu">
 								<center>
-									<img class="img-menu" src="images/01.png">
-									<h3>Modulo</h3>
+									<img class="img-menu" src="media/iconos/iconsalud.png">
+									<h3>SALUD COMUNITARIA</h3>
 									<p class="text-menu">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, officiis ex nam 
-										maxime deleniti alias modi cum nisi. Iusto, ipsum, nostrum ullam commodi rerum odit
+										Atención que se brinda a la comunidad, basada en la identificación de problemas de salud  y medicina preventiva comunitaria
 									</p>
 									<form action="">
-										<input type="submit" value="ENTRAR"/>
+										<input type="submit" value="ENTRAR" class="morado"/>
 									</form>
 								</center>
 							</fieldset>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<article>
+					<div class="row">
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<fieldset class="panel menu">
+								<center>
+									<img class="img-menu" src="media/iconos/iconservicios.png">
+									<h3>SERVICIOS</h3>
+									<p class="text-menu">
+										Promueve  los servicios y productos  que proporciona la comunidad para generar el autoconsumo entre los miembros de la colonia
+									</p>
+									<form action="">
+										<input type="submit" value="ENTRAR" class="gris"/>
+									</form>
+								</center>
+							</fieldset>
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<fieldset class="panel menu">
+								<center>
+									<img class="img-menu" src="media/iconos/iconayuda.png">
+									<h3>AYUDA</h3>
+									<p class="text-menu">
+										
+									</p>
+									<form action="">
+										<input type="submit" value="ENTRAR" class="cafe"/>
+									</form>
+								</center>
+							</fieldset>
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 						</div>
 					</div>
 				</article>

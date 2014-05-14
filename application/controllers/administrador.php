@@ -178,9 +178,9 @@ class Administrador extends CI_Controller {
 				$id_colono = $colono->Id;
 				//insertar presidente de comite
 				$Puesto=1;
-				$this->comitecolono_model->registrapresidente($id_comite,$id_colono,$Puesto);
+				$presidente = $this->comitecolono_model->registrapresidente($id_comite,$id_colono,$Puesto);
 			} else{
-				echo json_encode($comites);
+				echo json_encode($presidente);
 			}
 		} else{
 			$resp = false;

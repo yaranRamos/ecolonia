@@ -107,7 +107,7 @@
 				orientation: "bottom auto",
 				autoclose: true,
 				todayHighlight: true,
-				format: "mm-dd-yyyy",
+				format: "yyyy-mm-dd",
 				startView: 2
 			});
 			$('#registrar_comite').click(function(){
@@ -126,13 +126,38 @@
 				var numero = $('#numero').val();
 				var sexo = $('#sexo_colono').val();
 
-				if(!fundacion == "" && !comite == "" && !integrantes == "" && !estado == "" && !municipio == "" && !colonia == "" && !nombre == "" && !apaterno == "" && !amaterno == "" && !correo == "" && !cel == "" && !calle == "" && !numero == ""){
+				if(!comite == "" && !estado == "" && !municipio == "" && !colonia == "" && !nombre == "" && !apaterno == "" && !amaterno == "" && !calle == "" && !numero == ""){
 					$.ajax({
 						type: "POST",
 						url: "http://localhost/ecolonia/index.php/administrador/registrar_comites",
 						data: {fundacion:fundacion, comite:comite, integrantes:integrantes,
-						 estado:estado, municipio:municipio, colonia:colonia, nombre:nombre,
-						  apaterno:apaterno, amaterno:amaterno, correo:correo, cel:cel, calle:calle, numero:numero ,sexo:sexo},
+							estado:estado, municipio:municipio, colonia:colonia, nombre:nombre,
+							apaterno:apaterno, amaterno:amaterno, correo:correo, cel:cel, calle:calle, numero:numero ,sexo:sexo},
+						success: function(msg){
+							if(msg = "true"){
+								$('#titulo_alert').html("Aviso");
+								$('#texto_alert').html("Los datos se guardaron correctamente");
+								$('#alert').modal('show');
+								$('#fundacion').val("");
+								$('#comite').val("");
+								$('#integrantes').val("");
+								$('#estado').val("");
+								$('#municipio').val("");
+								$('#colonia').val("");
+								$('#nombre').val("");
+								$('#apaterno').val("");
+								$('#amaterno').val("");
+								$('#correo').val("");
+								$('#cel').val("");
+								$('#calle').val("");
+								$('#numero').val("");
+								$('#sexo_colono').val("");
+							} else{
+								$('#titulo_alert').html("Error..!!");
+								$('#texto_alert').html("Error al guardar los datos");
+								$('#alert').modal('show');
+							}
+						}
 					});
 				} else{
 					$('#texto_alert').html("Ingrese los datos requeridos");
