@@ -41,16 +41,14 @@
 									</div>
 									<div class="grupo x5">
 										<label for="">Municipio:</label>
-										<select name="" id="municipio">
+										<select onchange="getColonia(this.value)" name="" id="municipio">
 											<option value="">Selecciona Municipio</option>
-											
 										</select>
 									</div>
 									<div class="grupo x5">
 										<label for="">Colonia:</label>
-										<select name="" id="colonia_casa">
-											<option value=""></option>
-											<option value="1">Fracc. Arboledas</option>
+										<select  name="" id="colonia">
+											<option value="">Selecciona Colonia</optio>
 										</select>
 									</div>
 									<div class="grupo x5">
@@ -182,9 +180,9 @@
 			$('#registrar_casa').click(function(){
 				var familia = $('#familia_casa').val();
 				var telefono = $('#telefono_casa').val();
-				var estado = $('#estado_casa').val();
-				var municipio = $('#municipio_casa').val();
-				var colonia = $('#colonia_casa').val();
+				var estado = $('#estado').val();
+				var municipio = $('#municipio').val();
+				var colonia = $('#colonia').val();
 				var calle = $('#calle_casa').val();
 				var numero = $('#numero_casa').val();
 				if(!familia == "" && !estado == "" && !municipio == "" && !colonia == "" && !calle == "" && !numero == ""){

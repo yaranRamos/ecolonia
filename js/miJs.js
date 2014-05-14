@@ -19,7 +19,7 @@ $('#form_sesion').submit(function(event){
 });
 }
 
-// Obtenemos los estados
+// Obtenemos los Municipios de un Estado
 function getMunicipio(estado_id){
 	var estado = estado_id;
 	var municipios = $("#municipio");
@@ -39,8 +39,34 @@ function getMunicipio(estado_id){
 				municipios.append('<option value = "' + miJson[item].Id + '">' + miJson[item].Nombre + '</option>');
 			}
 		}else{
-			alert("Algo fallo");
+			alert("Municipios No Disponibles");
 		}
 	});
 }
+
+// Obtenemos las Colonias de un Municipio
+ function getColonia(municipio_id){
+ 	
+ 	var municipio = municipio_id;
+ 	var colonias = $("#colonia");
+ 	// cargamos con ajax las colonias del municipio
+ 	colonias.find('option').remove().end().append('<option value="">Selecciona Colonia</option>').val('');
+ 	jQuery.ajax({
+ 		url:'http://localhost/ecolonia/index.php/administrador/get_colonias',
+		timeout:3000,
+		type:'post',
+		data:{
+			municipio_id: municipio
+		}
+ 	}).done(function(resp){
+ 		var miJson = jQuery.parseJSON(resp);
+ 		if(miJson){
+ 			for(var item in miJson){
+ 				colonias.append('<option value = "'+ miJson[item].Id +'">' + miJson[item].Nombre + '</option>');
+ 			}
+ 		}else{
+ 			alert("Colonias No Disponibles");
+ 		}
+ 	});	
+ }
 

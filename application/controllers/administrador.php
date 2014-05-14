@@ -69,15 +69,21 @@ class Administrador extends CI_Controller {
 		if($this->input->post()){
 			$municipio = $this->input->post('municipio');
 			$nombre = $this->input->post('nombre');
+			$FechaFun = $this->input->post('fecha');
+			$NumeroHabitantes = $this->input->post('NumeroHabitantes');
 			$ubicacion = $this->input->post('ubicacion');
 			$diagnostico = $this->input->post('diagnostico');
 			$extencion = $this->input->post('extencion');
 
 			// Validamos si la colonia existe
-			$colonia = $this->colonia_model->verifica_colonia();
-
-			$colonia = $this->colonia_model->registra_colonia($municipio,$nombre,$ubicacion,$diagnostico,$extencion);
-			echo json_encode($colonia);
+			$colonia = $this->colonia_model->verifica_colonia($municipio,$nombre);
+			if(is_object($colonia)) {
+				$resp = false;
+				echo json_encode($resp);
+			}else{
+				$colonia = $this->colonia_model->registra_colonia($municipio,$FechaFun,$NumeroHabitantes,$nombre,$ubicacion,$diagnostico,$extencion);
+				echo json_encode($colonia);
+			}
 		} else{
 			$resp = false;
 			echo json_encode($resp);
@@ -187,6 +193,14 @@ class Administrador extends CI_Controller {
 			$id_estado = $this->input->post('estado_id');
 			$municipios = $this->municipio_model->get_municipios($id_estado);
 			echo json_encode($municipios);
+		}
+	}
+
+	PUBLIC function get_colonias(){
+		if($this->input->post()){
+			$id_municipio = $this->input->post('municipio_id');
+			$colonias = $this->colonia_model->get_colonias($id_municipio);
+			echo json_encode($colonias);
 		}
 	}
 

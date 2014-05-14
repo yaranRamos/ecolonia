@@ -15,11 +15,7 @@
 							<fieldset class="panel">
 								<legend>¿QUE ES E-COLONIA?</legend>
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloremque, ut labore vero similique sequi vitae pariatur rerum nostrum aut mollitia tempora tempore quia autem amet non veritatis a quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, maxime, hic, officiis debitis pariatur obcaecati beatae quibusdam fugit molestiae voluptate quidem dolores labore minus nisi non aperiam nemo odit adipisci.
-								</p>
-								<br>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, ducimus iste sit facere veritatis sequi asperiores omnis at iusto dolore quae soluta delectus velit consequatur cum illum laboriosam suscipit dolorem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, nihil, in necessitatibus dolore delectus tempora sunt nam unde optio ea voluptates possimus suscipit consequuntur nemo molestiae. Quisquam similique magni ex. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, exercitationem iste sit reiciendis quam minima fugiat expedita. Quas, sint, sequi, assumenda molestias similique repellat officia temporibus fugiat eligendi maiores sunt.
+									El eColonia es un sistema que administra Colonias pro-ambientales, en las cuales se ha instaurado una cultura de respeto al medio ambiente desde los propios núcleos familiares, con el objetivo de crear comunidades urbanas autogestoras, autorreguladoras y corresponsables, que inicien sus transitar hacia el desarrollo sustentable.
 								</p>
 							</fieldset>
 						</div>
@@ -59,19 +55,19 @@
 										</ol>
 										<div class="carousel-inner">
 											<div class="item active">
-											    <img src="images/slider/149274_637046986348452_1725156144_n.jpg" class="imagen-slider" alt="">
+											    <img src="media/slider/149274_637046986348452_1725156144_n.jpg" class="imagen-slider" alt="">
 											    <div class="carousel-caption">
 
 											    </div>
 										    </div>
 										    <div class="item">
-											    <img src="images/slider/1655838_637048616348289_585699993_n.jpg" class="imagen-slider" alt="">
+											    <img src="media/slider/1655838_637048616348289_585699993_n.jpg" class="imagen-slider" alt="">
 											    <div class="carousel-caption">
 
 											    </div>
 										    </div>
 										    <div class="item">
-											    <img src="images/slider/1896733_637050426348108_210019424_n.jpg" class="imagen-slider" alt="">
+											    <img src="media/slider/1896733_637050426348108_210019424_n.jpg" class="imagen-slider" alt="">
 											    <div class="carousel-caption">
 
 											    </div>

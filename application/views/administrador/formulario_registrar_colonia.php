@@ -14,6 +14,7 @@
 		<section>
 			<div class="container">
 				<div class="col">
+				<form id="formulario_registrar_colonia">
 					<fieldset class="panel">
 						<legend>Colonia</legend>
 						<div class="lineal">
@@ -39,7 +40,7 @@
 						</div>
 						<div class="lineal">
 							<div class="grupo x5">
-								<label for="">Fecha Fundacion:</label>
+								<label for="">Fecha Fundación:</label>
 								<input type="text" id="fecha">
 							</div>
 							<div class="grupo x5">
@@ -68,6 +69,7 @@
 							<input type="button" value="Registrar" id="registrar_colonia">
 						</div>
 					</fieldset>
+				</form>
 				</div>
 			</div>
 		</section>
@@ -86,17 +88,21 @@
 				var estado = $('#estado').val();
 				var municipio = $('#municipio').val();
 				var nombre = $('#nombre').val();
+				var fecha = $('#fecha').val();
+				var numHab = $('#habit').val();
 				var ubicacion = $('#ubicacion').val();
 				var diagnostico = $('#diagnostico').val();
 				var extencion = $('#extencion').val();
-				if(!estado == "" && !municipio == "" && !nombre == "" && !ubicacion == ""){
+				if(!estado == "" && !municipio == "" && !nombre == "" && !ubicacion == "" && !fecha == "" && !numHab == "" && !diagnostico == "" && !extencion == ""){
 					$.ajax({
 						type: "POST",
 						url: "http://localhost/ecolonia/index.php/administrador/registrar_colonia",
 						data:{
 						 estado:estado,
 						 municipio:municipio, 
-						 nombre:nombre, 
+						 nombre:nombre,
+						 fecha:fecha,
+						 NumeroHabitantes:numHab, 
 						 ubicacion:ubicacion, 
 						 diagnostico:diagnostico, 
 						 extencion:extencion
@@ -105,12 +111,18 @@
 							console.log(msg);
 							if(msg == "true"){
 								$('#titulo_alert').html("¡COLONIA REGISTRADA CON EXITO!");
-								$('#texto_alert').html("Registro guardado con exito");
+								$('#texto_alert').html("¡REGISTRO GUARDADO CON EXITO!");
 								$('#alert').modal('show');
+								
+								//Limpiamos los datos
+								//$('#estado').val(); $('#municipio').val(); $('#nombre').val(); $('#fecha').val(); $('#habit').val(); $('#ubicacion').val(); $('#diagnostico').val(); $('#extencion').val();
 							} else{
-								$('#titulo_alert').html("Error..!!");
-								$('#texto_alert').html("error al guardar el registro");
+								$('#titulo_alert').html("ERROR");
+								$('#texto_alert').html("¡ERROR LA COLONIA YA EXISTE!");
 								$('#alert').modal('show');
+
+								//Limpiamos los datos
+								//$('#estado').val();$('#municipio').val();$('#nombre').val();$('#fecha').val();$('#habit').val();$('#ubicacion').val();$('#diagnostico').val();$('#extencion').val();
 							}
 						}
 					});
@@ -118,6 +130,9 @@
 					$('#titulo_alert').html("¡REVISA TUS DATOS!");
 					$('#texto_alert').html("Ingresa los datos requeridos");
 					$('#alert').modal('show');
+
+					//Limpiamos los datos
+					//$('#estado').val(); $('#municipio').val(); $('#nombre').val(); $('#fecha').val(); $('#habit').val(); $('#ubicacion').val(); $('#diagnostico').val(); $('#extencion').val();
 				}
 			});
 		</script>

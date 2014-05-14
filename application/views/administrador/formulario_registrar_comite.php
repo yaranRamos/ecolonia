@@ -40,12 +40,12 @@
 										<?php }?>
 										</select>
 										<label>Municipio:</label>
-										<select name="" id="municipio" class="select">
+										<select  onchange="getColonia(this.value)" name="" id="municipio" class="select">
 											<option value="">Selecciona Municipio</option>
 										</select>
 										<label>Colonia:</label>
 										<select name="" id="colonia" class="select">
-											<option value="1">La Albarrada</option>
+											<option value="">Selecciona Colonia</option>
 										</select>	
 								</fieldset>
 							</div>
