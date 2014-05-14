@@ -10,12 +10,12 @@
 							</div>
 							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 facebook">
 								<a href="http://www.googel.com" target="_blank">
-									<img src="images/f.png">
+									<img src="media/redes/f.png">
 								</a>
 							</div>
 							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 twitter">
 								<a href="http://www.googel.com" target="_blank">
-									<img src="images/t.png">
+									<img src="media/redes/t.png">
 								</a>
 							</div>
 						</div>

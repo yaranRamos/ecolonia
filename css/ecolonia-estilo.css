@@ -187,8 +187,33 @@ input[type='button']:disabled {
     text-decoration: none !important;
     margin-bottom: 20px;
 }
-button a{
-    width: 100% !important;
+.rojo {
+    background-color: #E2534B !important;
+    border-bottom: solid 4px #dd6761 !important;
+}
+.verde {
+    background-color: #71C675 !important;
+    border-bottom: solid 4px #91c992 !important;
+}
+.naranja {
+    background-color: #E36B2C !important;
+    border-bottom: solid 4px #e28251 !important;
+}
+.aqua {
+    background-color: #25B9E1 !important;
+    border-bottom: solid 4px #7bd0e5 !important;
+}
+.morado {
+    background-color: #B96C9A !important;
+    border-bottom: solid 4px #C181A7 !important;
+}
+.gris {
+    background-color: #AAAAAA !important;
+    border-bottom: solid 4px #BFBDBD !important;
+}
+.cafe {
+    background-color: #B89B90 !important;
+    border-bottom: solid 4px #D1B3A9 !important;
 }
 .cancelar {
     background: #E8635A !important;
@@ -209,11 +234,10 @@ button a{
 }
 .img-menu {
     width: auto;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 .text-menu {
-    height: 70px;
-    margin-top: 10px;
+    height: 95px;
     margin-bottom: 15px;
 }
 .video {
