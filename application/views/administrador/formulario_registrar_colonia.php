@@ -93,7 +93,14 @@
 					$.ajax({
 						type: "POST",
 						url: "http://localhost/ecolonia/index.php/administrador/registrar_colonia",
-						data: {estado:estado, municipio:municipio, nombre:nombre, ubicacion:ubicacion, diagnostico:diagnostico, extencion:extencion},
+						data:{
+						 estado:estado,
+						 municipio:municipio, 
+						 nombre:nombre, 
+						 ubicacion:ubicacion, 
+						 diagnostico:diagnostico, 
+						 extencion:extencion
+						},
 						success: function(msg){
 							console.log(msg);
 							if(msg == "true"){
