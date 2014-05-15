@@ -21,7 +21,7 @@
 									<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 										<center>
 											<img src="" alt=""><br>
-											<form action="<?php echo site_url('presidente/formulario_registrar_miembros'); ?>" method="post">
+											<form action="<?php echo site_url('presidente/formulario_registrar_miembro'); ?>" method="post">
 												<input type="submit" value="REGISTRAR MIEMBROS DEL CB">
 											</form>
 											<form action="<?php echo site_url('presidente/formulario_registrar_calle'); ?>" method="post">

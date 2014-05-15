@@ -50,6 +50,12 @@ class Presidente extends CI_Controller {
 		$this->load->view('presidente/footer_pres');
 	}
 
+	public function formulario_registrar_miembro(){
+		$this->load->view('presidente/header_pres');
+		$this->load->view('presidente/formulario_registrar_miembro');
+		$this->load->view('presidente/footer_pres');
+	}
+
 	public function registrar_calles(){
 		if($this->input->post()){
 			$resp = true;
