@@ -31,7 +31,7 @@
 									<img class="img-menu" src="media/iconos/icongestion.png">
 									<h3>GESTIÓN</h3>
 									<p class="text-menu">
-										Coordina las gestiones que realiza el Comité de Barrio y la ciudadanía ante las autoridades municipales
+										Coordina las gestiones que realizan el Comité de Barrio y la ciudadanía ante las autoridades municipales
 									</p>
 									<form action="">
 										<input type="submit" value="ENTRAR" class=""/>

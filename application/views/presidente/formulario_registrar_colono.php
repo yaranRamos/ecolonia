@@ -24,7 +24,7 @@
 										<input type="text" placeholder="Perez Garcia" id="familia_casa">
 									</div>
 									<div class="grupo x5">
-										<label for="">Telefono:</label>
+										<label for="">Teléfono:</label>
 										<input type="text" id="telefono_casa">
 									</div>
 								</div>
@@ -60,7 +60,7 @@
 										</select>
 									</div>
 									<div class="grupo x5">
-										<label for="">Numero:</label>
+										<label for="">Número:</label>
 										<input type="text" id="numero_casa">
 									</div>
 								</div>

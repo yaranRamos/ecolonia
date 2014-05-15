@@ -34,7 +34,7 @@
 										<source src="" type="video/mp4"></source>
 									</video>
 								</div>
-								<p>
+								<p style="text-align:justify;">
 									La colonia Lomas del Centenario del municipio de Villa de Álvarez es una colonia que se ha distinguido en el municipio por la gestión que han realizado los correspondientes Comités de Barrio para tratar de elevar la calidad de vida en su colonia.
 								</p>
 								<p>

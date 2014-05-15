@@ -80,14 +80,14 @@
 											<input id="correo" type="text" />
 										</div>
 									</div>
-									<label>Telefono Celular:</label>
+									<label>Teléfono Celular:</label>
 									<input id="cel" type="text" />
 									<div class="lieneal">
 										<div class="grupo x-4">
 											<label>Calle:</label>
 											<input id="calle" type="text" /></div>
 										<div class="grupo x4 sin-padding">
-											<label>Numero:</label>
+											<label>Número:</label>
 											<input id="numero" type="text" />
 										</div>
 									</div>
