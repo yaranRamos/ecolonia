@@ -16,7 +16,7 @@
 				<div class="col">
 				<form id="formulario_registrar_colonia">
 					<fieldset class="panel">
-						<legend>Colonia</legend>
+						<legend>Registro de Colonia</legend>
 						<div class="lineal">
 							<div class="grupo x3">
 								<label for="">Estado</label>
@@ -44,21 +44,21 @@
 								<input type="text" id="fecha">
 							</div>
 							<div class="grupo x5">
-								<label for="">Numero de habitantes:</label>
+								<label for="">Número de habitantes:</label>
 								<input type="text" id="habit">
 							</div>
 							<div class="grupo x3">
-								<label for="">Ubicacion</label>
+								<label for="">Ubicación</label>
 								<input type="text" id="ubicacion">
 							</div>
 							<div class="grupo x4">
-								<label for="">Extencion geografica</label>
+								<label for="">Extensión geográfica</label>
 								<input type="text" id="extencion">
 							</div>
 						</div>
 						<div class="lineal">
 							<div class="grupo x2 sin-pading">
-								<label for="">Diagnostico inicial</label>
+								<label for="">Diagnóstico inicial</label>
 								<textarea name="" id="diagnostico" cols="30" rows="5"></textarea>
 							</div>
 							<div class="grupo x2">

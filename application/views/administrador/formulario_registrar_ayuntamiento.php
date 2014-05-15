@@ -53,7 +53,7 @@
 									<input type="text" />
 									<label>E-mail:</label>
 									<input type="text" />
-									<label>Telefono Celular:</label>
+									<label>Teléfono Celular:</label>
 									<input type="text" />
 									<input type="submit" value="AGREGAR"/>
 								</fieldset>
