@@ -1,8 +1,8 @@
 		<nav>
 			<div class="container">
 				<ul class="navbar izquierda">
- 					<li><a href="<?php echo site_url('presidente'); ?>">Menu</a></li>
- 					<li><a href="<?php echo site_url('presidente/menu_estructura'); ?>">Estructura</a></li>
+ 					<li><a href="<?php echo site_url('representante_calle'); ?>">Menu</a></li>
+ 					<li><a href="<?php echo site_url('representante_calle/menu_estruc_rep'); ?>">Estructura</a></li>
  				</ul>
  				<ul class="navbar derecha">
 					<a href="<?php echo site_url(); ?>" class="btn btn-iniciar">
@@ -13,10 +13,9 @@
 		</nav>
 		<section>
 			<div class="container">
-				<article>
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<fieldset class="panel">
+							<fieldset>
 								<legend>DOMICILIO</legend>
 								<div class="lineal">
 									<div class="grupo x3">
@@ -70,8 +69,6 @@
 							</fieldset>
 						</div>
 					</div>
-				</article>
-				<article class="oculto" id="registrar_datos">
 					<div class="row">
 						<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
 							<fieldset class="panel">
@@ -142,7 +139,6 @@
 							</fieldset>
 						</div>
 					</div>
-				</article>
 			</div>
 		</section>
 		<script type="text/javascript" src="js/jquery.formatter.js"></script>

@@ -12,12 +12,12 @@
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 						</div>
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<fieldset class="panel">
+							<fieldset>
 								<legend>INICIAR SESIÓN</legend>
 								<form action="<?php echo site_url('ecolonia/logueo') ?>" method="POST" id="form_sesion">
 									<label for="usuario">Usuario:</label>
 									<input type="text" name="usuario">
-									<label for="password">Contraneña:</label>
+									<label for="password">Contraseña:</label>
 									<input type="password" name="password">
 									<label for="">Tipo de usuario</label>
 									<select name="tipo_usuario" id="tipo_usuario">
@@ -25,7 +25,7 @@
 										<option value="1">Administrador</option>
 										<option value="2">Presidente CB</option>
 										<option value="3">Miembros CB</option>
-										<option value="4">Familia</option>
+										<option value="4">Representante de Calle</option>
 									</select>
 									<input type="submit" value="INICIAR">
 								</form>

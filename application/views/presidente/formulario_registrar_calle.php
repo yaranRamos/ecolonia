@@ -13,35 +13,42 @@
 		</nav>
 		<section>
 			<div class="container">
-				<article>
-					<form action="">
-						<div class="row">
-							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-								<fieldset class="panel">
-									<legend>CALLE</legend>
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<fieldset>
+							<legend>CALLE</legend>
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 									<label for="">Nombre</label>
 									<input type="text" id="nombre">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-4 col-xs-offset-8 col-sm-4 col-sm-offset-8 col-md-4 col-md-offset-8 col-lg-4 col-lg-offset-8">
 									<input type="button" value="AGREGAR" id="agregar">
-								</fieldset>
+								</div>
 							</div>
-							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-								<fieldset class="panel">
-									<legend>LISTA</legend>
-									<ul class="integrantes" id="calles">
-									</ul>
-									<div class="lineal">
-										<div class="grupo x2">
-											<input type="button" value="CANCELAR" id="cancelar" class="cancelar">
-										</div>
-										<div class="grupo x2">
-											<input type="button" value="GUARDAR" id="guardar">
-										</div>
-									</div>
-								</fieldset>
+						</fieldset>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<fieldset>
+							<legend>LISTA</legend>
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<ul class="integrantes" id="calles"></ul>
+								</div>
 							</div>
-						</div>
-					</form>
-				</article>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<input type="button" value="CANCELAR" id="cancelar" class="rojo">
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<input type="button" value="GUARDAR" id="guardar" class="">
+								</div>
+							</div>
+						</fieldset>
+					</div>
+				</div>
 			</div>
 		</section>
 		<script>

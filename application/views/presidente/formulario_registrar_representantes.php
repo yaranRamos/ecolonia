@@ -47,7 +47,7 @@
 									</select>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-									<label for="">Puesto</label>
+									<label for="">Calle a Representar</label>
 									<select name="" id="puesto"></select>	
 								</div>
 							</div>

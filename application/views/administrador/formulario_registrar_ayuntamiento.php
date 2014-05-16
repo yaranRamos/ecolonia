@@ -14,10 +14,9 @@
 		<section>
 			<div class="container">
 				<article>
-					<form action="">
 						<div class="row">
 							<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-								<fieldset class="panel">
+								<fieldset>
 									<legend>LOCALIDAD</legend>
 										<label>Estado:</label>
 										<select onchange="getMunicipio(this.value)" name="" id="" class="select">
@@ -33,7 +32,7 @@
 								</fieldset>
 							</div>
 							<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-								<fieldset class="panel">
+								<fieldset>
 									<legend>CONTACTO</legend>
 									<div class="lineal">
 										<div class="grupo x3">
@@ -59,7 +58,6 @@
 								</fieldset>
 							</div>
 						</div>
-					</form>
 				</article>
 			</div>
 		</section>
