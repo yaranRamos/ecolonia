@@ -16,7 +16,7 @@ class Administrador extends CI_Controller {
 
 	public function index()	{
 		$this->load->view('administrador/header_admon');
-		$this->load->view('administrador/menu_admon1');
+		$this->load->view('administrador/menu_admon');
 		$this->load->view('administrador/footer_admon');
 	}
 

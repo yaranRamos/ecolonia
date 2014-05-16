@@ -13,132 +13,82 @@
 		</nav>
 		<section>
 			<div class="container">
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<fieldset>
-								<legend>DOMICILIO</legend>
-								<div class="lineal">
-									<div class="grupo x3">
-										<label for="">Familia</label>
-										<input type="text" placeholder="Perez Garcia" id="familia_casa">
-									</div>
-									<div class="grupo x5">
-										<label for="">Teléfono:</label>
-										<input type="text" id="telefono_casa">
-									</div>
+				<div class="row">
+					<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+						<fieldset>
+							<legend>CASA</legend>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label for="">Familia</label>
+									<input type="text" placeholder="Perez Garcia" id="familia_casa">
 								</div>
-								<div class="lineal">
-									<div class="grupo x5">
-										<label for="">Estado:</label>
-										<select  onchange="getMunicipio(this.value)" name="estado_id" id="estado">
-											<option value="">Selecciona Estado</option>
-											<?php foreach($estado->result() as $estado){?>
-											<option value="<?php echo $estado->Id?>"><?php echo $estado->Nombre?></option>
-											<?php }?>
-										</select>
-									</div>
-									<div class="grupo x5">
-										<label for="">Municipio:</label>
-										<select onchange="getColonia(this.value)" name="" id="municipio">
-											<option value="">Selecciona Municipio</option>
-										</select>
-									</div>
-									<div class="grupo x5">
-										<label for="">Colonia:</label>
-										<select  name="" id="colonia">
-											<option value="">Selecciona Colonia</optio>
-										</select>
-									</div>
-									<div class="grupo x5">
-										<label for="">Calle:</label>
-										<select name="" id="calle_casa">
-											<option value=""></option>
-											<option value="1">Aacias</option>
-											<option value="2">Tulipanes</option>
-											<option value="3">Parotas</option>
-										</select>
-									</div>
-									<div class="grupo x5">
-										<label for="">Número:</label>
-										<input type="text" id="numero_casa">
-									</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label for="">Teléfono:</label>
+									<input type="text" id="telefono_casa">
 								</div>
-								<div class="x4 derecha">
-									<input type="button" value="Registrar Casa" id="registrar_casa">
+							</div>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label for="">Número:</label>
+									<input type="text" id="numero_casa">
 								</div>
-							</fieldset>
-						</div>
+							</div>
+						</fieldset>
 					</div>
-					<div class="row">
-						<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-							<fieldset class="panel">
-								<legend>COLONO</legend>
-								<div class="lineal">
-									<div class="grupo x3">
-										<label>Nombre:</label>
-										<input type="text" id="nombre_colono"/>
-									</div>
-									<div class="grupo x3">
-										<label>Apellido Paterno:</label>
-										<input type="text" id="apellido_p_colono"/>
-									</div>
-									<div class="grupo x3">
-										<label>Apellido Materno:</label>
-										<input type="text" id="apellido_m_colono"/>
-									</div>
+					<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+						<fieldset>
+							<legend>COLONO</legend>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Nombre</label>
+									<input type="text" id="nombre_colono"/>
 								</div>
-								<div class="lineal">
-									<div class="grupo x2">
-										<label>Fecha de Nacimiento <small>(yyyy/mm/dd)</small>:</label>
-										<input type="text" id="edad_colono">
-										<!-- <select name="" id="edad_colono" class="select"></select> -->
-									</div>
-									<div class="grupo x2">
-										<label>Sexo:</label>
-										<select name="" id="sexo_colono" class="select">
-											<option value=""></option>
-											<option value="F">Femenino</option>
-											<option value="M">Masculino</option>
-										</select>
-									</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Apellido Paterno</label>
+									<input type="text" id="apellido_p_colono"/>
 								</div>
-								<div class="lineal">
-									<div class="grupo x2">
-										<label>Estatura:</label>
-										<input type="text" id="estatura_colono">
-										<!-- <select name="" id="estatura_colono" class="select"></select> -->
-									</div>
-									<div class="grupo x2">
-										<label>Peso:</label>
-										<input type="text" id="peso_colono">
-										<!-- <select name="" id="peso_colono" class="select"></select> -->
-									</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Apellido Materno</label>
+									<input type="text" id="apellido_m_colono"/>
 								</div>
-								<label>E-mail:</label>
-								<input type="text" id="email_colono"/>
-								<label>Telefono Celular:</label>
-								<input type="text" id="celular_colono"/>
-								<div class="x3 derecha">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Fecha de Nacimiento</label>
+									<input type="text" id="edad_colono">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Sexo</label>
+									<select name="" id="sexo_colono" class="select">
+										<option value="">Selecciona Sexo</option>
+										<option value="F">Femenino</option>
+										<option value="M">Masculino</option>
+									</select>
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>E-mail</label>
+									<input type="text" id="email_colono"/>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Telefono Celular</label>
+									<input type="text" id="celular_colono"/>
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-4 col-xs-offset-8 col-sm-4 col-sm-offset-8 col-md-4 col-md-offset-8 col-lg-4 col-lg-offset-8">
 									<input type="button" value="AGREGAR" class="btn-submit" id="copia_datos"/>
 								</div>
-							</fieldset>
-						</div>
-						<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-							<fieldset class="panel">
-								<legend>INTEGRANTES</legend>
-								<ul class="integrantes" id="integrantes">
-								</ul>
-								<div class="lineal">
-									<div class="grupo x2">
-										<input type="button" value="CANCELAR" class="cancelar" id="cancelar_envio"/>
-									</div>
-									<div class="grupo x2">
-										<input type="button" value="GUARDAR" id="enviar_datos"/>
-									</div>
-								</div>
-							</fieldset>
-						</div>
+							</div>
+						</fieldset>
 					</div>
+				</div>
 			</div>
 		</section>
 		<script type="text/javascript" src="js/jquery.formatter.js"></script>

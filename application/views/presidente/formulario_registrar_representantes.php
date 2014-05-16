@@ -15,7 +15,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-						<fieldset class="panel">
+						<fieldset>
 							<legend>COLONO</legend>
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
