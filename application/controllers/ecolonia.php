@@ -41,6 +41,8 @@ class Ecolonia extends CI_Controller {
 				redirect('administrador');
 			} elseif($this->input->post('tipo_usuario') == 2){
 				redirect('presidente');
+			} elseif($this->input->post('tipo_usuario') == 4){
+				redirect('representante_calle');
 			} else{
 				redirect('ecolonia/iniciar_sesion');
 			}

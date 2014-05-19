@@ -13,90 +13,106 @@
 		</nav>
 		<section>
 			<div class="container">
-				<article>
-					<form action="">
-						<div class="row">
-							
-							<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-								<fieldset class="panel">
-									<legend>COMITE DE BARRIO</legend>
-										<label>Nombre:</label>
-										<input id="comite" type="text" />
-										<div class="lineal">
-											<div class="grupo x2">
-												<label>No. de integrantes:</label>
-												<input id="integrantes" type="text" />
-											</div>
-											<div class="grupo x2 sin-padding">
-												<label>Fecha de fundación:</label>
-												<input id="fundacion" type="text" />
-											</div>
-										</div>
-										<label>Estado:</label>
-										<select onchange="getMunicipio(this.value)" name="" id="estado" class="select">
-											<option value="">Selecciona Estado</option>
-										<?php foreach($estado->result() as $est){?>
-											<option value="<?php echo $est->Id?>"><?php echo $est->Nombre?></option>
-										<?php }?>
-										</select>
-										<label>Municipio:</label>
-										<select  onchange="getColonia(this.value)" name="" id="municipio" class="select">
-											<option value="">Selecciona Municipio</option>
-										</select>
-										<label>Colonia:</label>
-										<select name="" id="colonia" class="select">
-											<option value="">Selecciona Colonia</option>
-										</select>	
-								</fieldset>
+				<div class="row">
+					<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+						<fieldset>
+							<legend>COMITE DE BARRIO</legend>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Nombre</label>
+									<input id="comite" type="text" />
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>No. de integrantes</label>
+									<input id="integrantes" type="text" />
+								</div>
 							</div>
-							<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-								<fieldset class="panel">
-									<legend>PRESIDENTE</legend>
-									<div class="lineal">
-										<div class="grupo x3">
-											<label>Nombre:</label>
-											<input id="nombre" type="text" />
-										</div>
-										<div class="grupo x3">
-											<label>Apellido Paterno:</label>
-											<input id="apaterno" type="text" />
-										</div>
-										<div class="grupo x3 sin-padding">
-											<label>Apellido Materno:</label>
-											<input id="amaterno" type="text" />
-										</div>
-									</div>
-									<div class="lineal">
-										<div class="grupo x4">
-											<label>Sexo:</label>
-											<select name="" id="sexo_colono" class="select">
-												<option value=""></option>
-												<option value="F">Femenino</option>
-												<option value="M">Masculino</option>
-											</select>
-										</div>
-										<div class="grupo x-4 sin-padding">
-											<label>E-mail:</label>
-											<input id="correo" type="text" />
-										</div>
-									</div>
-									<label>Teléfono Celular:</label>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Fecha de fundación</label>
+									<input id="fundacion" type="text" />
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Estado</label>
+									<select onchange="getMunicipio(this.value)" name="" id="estado" class="select">
+										<option value="">Selecciona Estado</option>
+									<?php foreach($estado->result() as $est){?>
+										<option value="<?php echo $est->Id?>"><?php echo $est->Nombre?></option>
+									<?php }?>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Municipio</label>
+									<select  onchange="getColonia(this.value)" name="" id="municipio" class="select">
+										<option value="">Selecciona Municipio</option>
+									</select>
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Colonia</label>
+									<select name="" id="colonia" class="select">
+										<option value="">Selecciona Colonia</option>
+									</select>	
+								</div>
+							</div>
+						</fieldset>
+					</div>
+					<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+						<fieldset class="panel">
+							<legend>PRESIDENTE</legend>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Nombre</label>
+									<input id="nombre" type="text" />
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Apellido Paterno</label>
+									<input id="apaterno" type="text" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Apellido Materno</label>
+									<input id="amaterno" type="text" />
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Sexo</label>
+									<select name="" id="sexo_colono" class="select">
+										<option value="">Selecciona Sexo</option>
+										<option value="F">Femenino</option>
+										<option value="M">Masculino</option>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>E-mail</label>
+									<input id="correo" type="text" />
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Teléfono Celular</label>
 									<input id="cel" type="text" />
-									<div class="lieneal">
-										<div class="grupo x-4">
-											<label>Calle:</label>
-											<input id="calle" type="text" /></div>
-										<div class="grupo x4 sin-padding">
-											<label>Número:</label>
-											<input id="numero" type="text" />
-										</div>
-									</div>
-									<input type="button" value="AGREGAR" id="registrar_comite"/>
-								</fieldset>
+								</div>
 							</div>
-						</div>
-					</form>
-				</article>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Calle</label>
+									<input id="calle" type="text" />
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<label>Número</label>
+									<input id="numero" type="text" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-4 col-xs-offset-8 col-sm-4 col-sm-offset-8 col-md-4 col-md-offset-8 col-lg-4 col-lg-offset-8">
+									<input type="button" value="AGREGAR" id="registrar_comite"/>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+				</div>
 			</div>
 		</section>
 		<script type="text/javascript" src="js/datepicker.js"></script>

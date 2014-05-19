@@ -14,7 +14,7 @@
 						<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 							<fieldset class="menu" id="estructural">
 								<center>
-									<form id="form_estructura" action="<?php echo site_url('presidente/menu_estructura'); ?>" method="POST">
+									<form id="form_estructura" action="<?php echo site_url('representante_calle/menu_estruc_rep'); ?>" method="POST">
 										<img class="img-menu" src="media/iconos/iconestructural.png">
 										<h3>ESTRUCTURAL</h3>
 										<p class="text-menu">

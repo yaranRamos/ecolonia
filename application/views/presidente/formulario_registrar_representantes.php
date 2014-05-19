@@ -15,7 +15,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-						<fieldset class="panel">
+						<fieldset>
 							<legend>COLONO</legend>
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -47,7 +47,7 @@
 									</select>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-									<label for="">Puesto</label>
+									<label for="">Calle a Representar</label>
 									<select name="" id="puesto"></select>	
 								</div>
 							</div>

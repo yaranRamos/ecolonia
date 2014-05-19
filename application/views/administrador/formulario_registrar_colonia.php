@@ -13,12 +13,11 @@
 		</nav>
 		<section>
 			<div class="container">
-				<div class="col">
-				<form id="formulario_registrar_colonia">
-					<fieldset class="panel">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<fieldset>
 						<legend>Registro de Colonia</legend>
-						<div class="lineal">
-							<div class="grupo x3">
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								<label for="">Estado</label>
 								<select onchange="getMunicipio(this.value)" name="" id="estado">
 									<option value="">Selecciona Estado</option>
@@ -27,49 +26,53 @@
 									<?php }?>
 								</select>
 							</div>
-							<div class="grupo x3">
+							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								<label for="">Municipio</label>
 								<select name="" id="municipio">
 									<option value="">Selecciona Municipio</option>
 								</select>
 							</div>
-							<div class="grupo x3 sin-pading">
+							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								<label for="">Nombre de la colonia</label>
 								<input type="text" id="nombre">
 							</div>
-						</div>
-						<div class="lineal">
-							<div class="grupo x5">
-								<label for="">Fecha Fundación:</label>
+							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+								<label for="">Fecha Fundación</label>
 								<input type="text" id="fecha">
 							</div>
-							<div class="grupo x5">
-								<label for="">Número de habitantes:</label>
+						</div>
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+								<label for="">Número de habitantes</label>
 								<input type="text" id="habit">
 							</div>
-							<div class="grupo x3">
+							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								<label for="">Ubicación</label>
 								<input type="text" id="ubicacion">
 							</div>
-							<div class="grupo x4">
+							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								<label for="">Extensión geográfica</label>
 								<input type="text" id="extencion">
 							</div>
+							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+								
+							</div>
 						</div>
-						<div class="lineal">
-							<div class="grupo x2 sin-pading">
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 								<label for="">Diagnóstico inicial</label>
 								<textarea name="" id="diagnostico" cols="30" rows="5"></textarea>
 							</div>
-							<div class="grupo x2">
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 								<label for="">Croquis</label>
 							</div>
 						</div>
-						<div class="x4 derecha">
-							<input type="button" value="Registrar" id="registrar_colonia">
+						<div class="row">
+							<div class="col-xs-3 col-xs-offset-9 col-sm-3 col-sm-offset-9 col-md-3 col-md-offset-9 col-lg-3 col-lg-offset-9">
+								<input type="button" value="Registrar" id="registrar_colonia">
+							</div>
 						</div>
 					</fieldset>
-				</form>
 				</div>
 			</div>
 		</section>

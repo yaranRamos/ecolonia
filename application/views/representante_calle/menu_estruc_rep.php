@@ -1,7 +1,7 @@
 		<nav>
 			<div class="container">
 				<ul class="navbar izquierda">
- 					<li><a href="<?php echo site_url('presidente'); ?>">Menu</a></li>
+ 					<li><a href="<?php echo site_url('representante_calle'); ?>">Menu</a></li>
  				</ul>
  				<ul class="navbar derecha">
 					<a href="<?php echo site_url(); ?>" class="btn btn-iniciar">
@@ -21,18 +21,9 @@
 									<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 										<center>
 											<img src="" alt=""><br>
-											<form action="<?php echo site_url('presidente/formulario_registrar_calle'); ?>" method="post">
-												<input type="submit" value="REGISTRAR CALLE">
-											</form>
-											<form action="<?php echo site_url('presidente/formulario_registrar_miembro'); ?>" method="post">
-												<input type="submit" value="REGISTRAR MIEMBROS DEL CB">
-											</form>
-											<form action="<?php echo site_url('presidente/formulario_registrar_representantes'); ?>" method="post">
-												<input type="submit" value="REPRESENTANTES DE CALLES">
-											</form>
-											<!-- <form action="<?php echo site_url('presidente/formulario_registrar_colono'); ?>" method="post">
+											<form action="<?php echo site_url('representante_calle/formulario_registrar_casa'); ?>" method="post">
 												<input type="submit" value="REGISTRAR CASA">
-											</form> -->
+											</form>
 										</center>
 									</div>
 									<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>

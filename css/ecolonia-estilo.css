@@ -67,16 +67,16 @@ article {
     height: 50px;
 }
 
-.panel {
+fieldset {
     width: 100%;
     background: #FFF;
     border: 1px solid #e7e7e7;
     border-bottom: solid 8px #E4E6E5;
     border-radius: 10px;
-    padding: 0 32px 32px 32px;
+    padding: 15px 15px 15px 15px;
     margin-bottom: 20px;
 }
-.panel legend {
+fieldset legend {
     background: #879393;
     color: #FFF;
     padding: 15px;
@@ -87,11 +87,10 @@ article {
     font-size: 18px;
     margin-left: -10px;
 }
-.panel label {
-    margin-top: 20px;
+fieldset label {
+    margin-top: 10px;
     display: block;
     color: #818C88;
-    margin-bottom: 3px;
     margin-left: 10px;
 }
 .lineal {
@@ -123,10 +122,10 @@ article {
     padding-left: 0px !important;
     padding-bottom: 0px !important;
 }
-.panel p {
-    margin-top: 10px;
+fieldset p {
+    margin-top: 5px;
 }
-.panel input[type='text'],
+fieldset input[type='text'],
 input[type='password'],
 input[type='number'],
 textarea {
@@ -141,7 +140,7 @@ textarea {
     width: 100%;
     resize: none;
 }
-.panel select {
+fieldset select {
     font-size: 16px;
     padding: 8px 6px;
     background: #E6E6E6;
@@ -152,7 +151,7 @@ textarea {
     border-left: solid 3px #DADADA;
     width: 100%;
 }
-form input[type='submit'],
+input[type='submit'],
 input[type='button'], .btn {
     margin-top: 20px;
     width: 100%;
@@ -168,7 +167,7 @@ input[type='button'], .btn {
     padding: 13px 20px;
     cursor: pointer;
 }
-form input[type='submit']:disabled,
+input[type='submit']:disabled,
 input[type='button']:disabled {
     background: #E6E6E6;
     border-bottom: solid 4px #c9c7c7;
@@ -229,16 +228,16 @@ input[type='button']:disabled {
     width: 100%;
 }
 .menu {
-    margin-bottom: 60px;
-    height: 300px;
+    height: 250px;
+    cursor: pointer;
 }
 .img-menu {
     width: auto;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 .text-menu {
     height: 95px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .video {
     width: 100%;
