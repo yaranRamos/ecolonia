@@ -17,7 +17,7 @@
 								<form action="<?php echo site_url('ecolonia/logueo') ?>" method="POST" id="form_sesion">
 									<label for="usuario">Usuario:</label>
 									<input type="text" name="usuario">
-									<label for="password">Contraneña:</label>
+									<label for="password">Contraseña:</label>
 									<input type="password" name="password">
 									<label for="">Tipo de usuario</label>
 									<select name="tipo_usuario" id="tipo_usuario">
