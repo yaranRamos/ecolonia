@@ -1,7 +1,7 @@
 -- by Shark Soft -- 22/05/2014
 -- REGISTRO DE LAS COLONIAS DE COLIMA
 
-INSERT INTO 'colonia' ('Id','Municipio','Nombre') VALUES
+INSERT INTO `colonia` (`Id`, `Municipio`, `Nombre`) VALUES
 (1 ,6, 'Ampliación Lázaro Cárdenas'),
 (2 ,6, 'Armería Centro'),
 (3 ,6, 'Augusto Gómez Villanueva'),
