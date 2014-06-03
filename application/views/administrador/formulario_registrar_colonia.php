@@ -28,13 +28,15 @@
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								<label for="">Municipio</label>
-								<select name="" id="municipio">
+								<select onchange="getColonia1(this.value)" name="" id="municipio">
 									<option value="">Selecciona Municipio</option>
 								</select>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-								<label for="">Nombre de la colonia</label>
-								<input type="text" id="nombre">
+								<label for="">Colonia</label>
+								<select name="" id="colonia">
+									<option value="">Selecciona Colonia</option>
+								</select>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								<label for="">Fecha Fundación</label>
@@ -90,7 +92,7 @@
 			$('#registrar_colonia').click(function(){
 				var estado = $('#estado').val();
 				var municipio = $('#municipio').val();
-				var nombre = $('#nombre').val();
+				var nombre = $('#colonia').val();
 				var fecha = $('#fecha').val();
 				var numHab = $('#habit').val();
 				var ubicacion = $('#ubicacion').val();

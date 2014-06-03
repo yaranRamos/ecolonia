@@ -12,18 +12,26 @@ class Colonia_model extends CI_Model{
 						->row();
 	}
 
-	public function registra_colonia($municipio,$FechaFun,$NumeroHabitantes,$nombre,$ubicacion,$diagnostico,$extencion){
-		return $this->db->set('Municipio',$municipio)
-						->set('FechaFun',$FechaFun)
+	public function registra_colonia($id_colonia,$FechaFun,$NumeroHabitantes,$ubicacion,$diagnostico,$extencion,$status){
+		return $this->db->set('FechaFun',$FechaFun)
 						->set('NumeroHabitantes',$NumeroHabitantes)
-						->set('Nombre',$nombre)
 						->set('Ubicacion',$ubicacion)
 						->set('Diagnostico_inicial',$diagnostico)
 						->set('Extension_Geografica',$extencion)
-						->insert('colonia');
+						->set('status',$status)
+						->where('Id',$id_colonia)
+						->update('colonia');
 	}
 
-	public function get_colonias($id_municipio){
+	public function get_colonias($id_municipio,$status){
+		return $this->db->where('Municipio',$id_municipio)
+						->where('status',$status)
+						->from('colonia')
+						->get()
+						->result();
+	}	
+
+	public function get_colonias1($id_municipio){
 		return $this->db->where('Municipio',$id_municipio)
 						->from('colonia')
 						->get()
