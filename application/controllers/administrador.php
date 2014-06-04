@@ -12,6 +12,8 @@ class Administrador extends CI_Controller {
 		$this->load->model('comitecolono_model');
 		$this->load->model('estado_model');
 		$this->load->model('municipio_model');
+		$this->load->model('usuario_model');
+		$this->load->model('colono_usuario_model');
 	}
 
 	public function index()	{
@@ -135,6 +137,34 @@ class Administrador extends CI_Controller {
 					//insertar presidente de comite
 					$Puesto=1;
 					$presidente = $this->comitecolono_model->registrapresidente($id_comite,$id_colono,$Puesto);
+					//insertat presidente en usuario
+					$usuario = $Nombre.$ApellidoPaterno;
+					$str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+					$contrasena = "";
+						for($i=0;$i<8;$i++) {
+						$contrasena .= substr($str,rand(0,62),1);
+					}
+					$tipo = 2;
+					$res_ru = $this->usuario_model->registra_usuario($usuario, $contrasena, $tipo);
+					if($res_ru){
+						$id_usuario = $this->usuario_model->get_id($usuario, $contrasena, $tipo);
+						$res_iu = $this->colono_usuario_model->inserta_usuario($id_colono, $id_usuario->Id);
+						if($res_iu){
+							$res = true;
+							$datos = array('resp'=>$res, 'usuario'=>$usuario, 'contrasena'=>$contrasena);
+							echo json_encode($datos);
+						} else{
+							$res = false;
+							$datos = array($res);
+							echo json_encode($datos);
+							return;
+						}
+					} else{
+						$res = false;
+						$datos = array($res);
+						echo json_encode($datos);
+						return;
+					}
 				} else{
 					echo json_encode($presidente);
 				}

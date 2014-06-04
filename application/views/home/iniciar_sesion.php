@@ -31,7 +31,7 @@
 								</form>
 							</fieldset>
 							<?php if ($mensaje != ""){ ?>
-								<div id="mensaje" class="alert alert-danger">
+								<div id="mensaje" class="alert alert-danger fade in">
 									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 									<?php echo $mensaje;?>
 								</div>

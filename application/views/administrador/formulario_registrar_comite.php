@@ -57,6 +57,12 @@
 								</div>
 							</div>
 						</fieldset>
+						<div id="usuario_contrasena">
+							<div id="mensaje" class="alert alert-danger fade in">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<div id="text_usuario_contrasena"></div>
+							</div>
+						</div>
 					</div>
 					<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
 						<fieldset class="panel">
@@ -118,6 +124,7 @@
 		<script type="text/javascript" src="js/datepicker.js"></script>
 		<script type="text/javascript" src="js/datepicker.es.js"></script>
 		<script>
+			$('#usuario_contrasena').hide();
 			$('#fundacion').datepicker({
 				language: "es",
 				orientation: "bottom auto",
@@ -150,10 +157,8 @@
 							estado:estado, municipio:municipio, colonia:colonia, nombre:nombre,
 							apaterno:apaterno, amaterno:amaterno, correo:correo, cel:cel, calle:calle, numero:numero ,sexo:sexo},
 						success: function(msg){
-							if(msg = "true"){
-								$('#titulo_alert').html("Aviso");
-								$('#texto_alert').html("Los datos se guardaron correctamente");
-								$('#alert').modal('show');
+							var datos = jQuery.parseJSON(msg);
+							if(datos.resp == true){
 								$('#fundacion').val("");
 								$('#comite').val("");
 								$('#integrantes').val("");
@@ -168,6 +173,13 @@
 								$('#calle').val("");
 								$('#numero').val("");
 								$('#sexo_colono').val("");
+
+								$('#titulo_alert').html("Aviso");
+								$('#texto_alert').html("Los datos se guardaron correctamente");
+								$('#alert').modal('show');
+
+								$('#usuario_contrasena').show();
+								$('#text_usuario_contrasena').html("Nombre de usuario: "+datos.usuario+" Contraseña: "+datos.contrasena);
 							} else{
 								$('#titulo_alert').html("Error..!!");
 								$('#texto_alert').html("Error al guardar los datos");
@@ -176,6 +188,7 @@
 						}
 					});
 				} else{
+					$('#titulo_alert').html("Error..!!");
 					$('#texto_alert').html("Ingrese los datos requeridos");
 					$('#alert').modal('show')
 				}
