@@ -5,7 +5,7 @@
  					<li><a href="<?php echo site_url('administrador/menu_estructura'); ?>">Estructura</a></li>
  				</ul>
  				<ul class="navbar derecha">
-					<a href="<?php echo site_url(); ?>" class="btn btn-iniciar">
+					<a href="<?php echo site_url('administrador/logout'); ?>" class="btn btn-iniciar">
 						Cerrar Sesión
 					</a>
  				</ul>

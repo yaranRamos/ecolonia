@@ -30,6 +30,12 @@
 									<input type="submit" value="INICIAR">
 								</form>
 							</fieldset>
+							<?php if ($mensaje != ""){ ?>
+								<div id="mensaje" class="alert alert-danger">
+									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+									<?php echo $mensaje;?>
+								</div>
+							<?php } ?>
 						</div>
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 						</div>
@@ -37,6 +43,19 @@
 				</article>
 			</div>
 		</section>
+		<script>
+			$('#form_sesion').submit(function(event){
+				if($('#tipo_usuario').val() != 0){
+					return;
+				} else{
+					$('#titulo_alert').html("Error...!!");
+					$('#texto_alert').html("Ingrese los datos requeridos");
+					$('#alert').modal('show')
+					event.preventDefault();
+				}
+			});
+			$(".alert").alert();
+		</script>
 		<div class="modal dialogo fade" id="alert">
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">
