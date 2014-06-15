@@ -14,6 +14,20 @@ class Usuario_model extends CI_Model{
 	}
 
 	public function registra_usuario($usuario, $contrasena, $tipo){
+		$consulta =	$this->db->set('Nombre',$usuario)
+						->set('Password',$contrasena)
+						->set('rol_Id',$tipo)
+						->insert('usuario');
+		if($consulta == true){
+			$consulta = $this->db->set('Nombre',$usuario)
+						->set('Password',$contrasena)
+						->set('rol_Id',5)
+						->insert('usuario');
+		}
+		return $consulta;
+	}
+
+	public function registra_usuario_colono($usuario, $contrasena, $tipo){
 		return $this->db->set('Nombre',$usuario)
 						->set('Password',$contrasena)
 						->set('rol_Id',$tipo)

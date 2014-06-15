@@ -19,11 +19,27 @@ class Colono_model extends CI_Model{
 						->insert('colono');
 	}
 
-	public function obtiene_id($Email,$Tel_celular)
-	{
+	public function obtiene_id($Email,$Tel_celular) {
 		return $this->db->like('Email',$Email)
 						->like('Tel_celular',$Tel_celular)
 						->get('colono')
 						->row();
+	}
+
+	public function get_id($apellidoP,$apellidoM,$nombre,$casa){
+		return $this->db->select('Id')
+						->where('ApellidoPaterno',$apellidoP)
+						->where('ApellidoMaterno',$apellidoM)
+						->where('Nombre',$nombre)
+						->where('Casa',$casa)
+						->get('colono')
+						->row();
+	}
+
+	public function get_miembros($casa){
+		return $this->db->where('Casa',$casa)
+						->from('colono')
+						->get()
+						->result();
 	}
 }

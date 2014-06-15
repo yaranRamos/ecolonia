@@ -5,7 +5,7 @@ class Comitecolono_model extends CI_Model{
 		parent::__construct();
 	}
 
-	public function registrapresidente($id_comite,$id_colono,$Puesto){
+	public function registra_miembro($id_comite,$id_colono,$Puesto){
 		return $this->db->set('comitedebarrio_Id',$id_comite)
 						->set('colono_Id',$id_colono)
 						->set('Puesto',$Puesto)

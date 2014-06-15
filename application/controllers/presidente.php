@@ -12,116 +12,303 @@ class Presidente extends CI_Controller {
 		$this->load->model('comitecolono_model');
 		$this->load->model('estado_model');
 		$this->load->model('municipio_model');
+		$this->load->model('usuario_model');
+		$this->load->model('colono_usuario_model');
+		$this->load->model('catalogocalle_colono_model');
 	}
 
 	public function index(){
-		$this->load->view('presidente/header_pres');
-		$this->load->view('presidente/menu_pres');
-		$this->load->view('presidente/footer_pres');
+		if($this->session->userdata('tipo')==2){
+			$this->load->view('presidente/header');
+			$this->load->view('presidente/menu');
+			$this->load->view('presidente/footer');
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+		
 	}
 
-	public function menu_estructura(){
-		$this->load->view('presidente/header_pres');
-		$this->load->view('presidente/menu_estruc_pres');
-		$this->load->view('presidente/footer_pres');
+	public function estructura(){
+		if($this->session->userdata('tipo')==2){
+			$this->load->view('presidente/header');
+			$this->load->view('presidente/estructura');
+			$this->load->view('presidente/footer');
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
 	}
 
 	public function formulario_registrar_colono(){
-		// Cargamos todos lo estados de la base de datos
-		$estados = $this->estado_model->get_estados();
-		$data = array(
-			'estado' => $estados
-		);
-		$this->load->view('presidente/header_pres');
-		$this->load->view('presidente/formulario_registrar_colono',$data);
-		$this->load->view('presidente/footer_pres');
+		if($this->session->userdata('tipo')==2){
+			// Cargamos todos lo estados de la base de datos
+			$estados = $this->estado_model->get_estados();
+			$data = array(
+				'estado' => $estados
+			);
+			$this->load->view('presidente/header_pres');
+			$this->load->view('presidente/formulario_registrar_colono',$data);
+			$this->load->view('presidente/footer_pres');
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
 	}
 
 	public function formulario_registrar_miembros(){
-		redirect('presidente/menu_estructura');
-		$this->load->view('presidente/header_pres');
-		$this->load->view('presidente/');
-		$this->load->view('presidente/footer_pres');
-	}
-
-	public function formulario_registrar_calle(){
-		$this->load->view('presidente/header_pres');
-		$this->load->view('presidente/formulario_registrar_calle');
-		$this->load->view('presidente/footer_pres');
-	}
-
-	public function formulario_registrar_miembro(){
-		$this->load->view('presidente/header_pres');
-		$this->load->view('presidente/formulario_registrar_miembro');
-		$this->load->view('presidente/footer_pres');
-	}
-
-	public function formulario_registrar_representantes(){
-		$this->load->view('presidente/header_pres');
-		$this->load->view('presidente/formulario_registrar_representantes');
-		$this->load->view('presidente/footer_pres');
-	}
-
-	public function registrar_calles(){
-		if($this->input->post()){
-			$resp = true;
-			echo json_encode($resp);
+		if($this->session->userdata('tipo')==2){
+			$this->load->view('presidente/header_pres');
+			$this->load->view('presidente/formulario_registrar_miembros');
+			$this->load->view('presidente/footer_pres');
 		} else{
-			$resp = false;
-			echo json_encode($resp);
+			$this->session->sess_destroy();
+			redirect('ecolonia');
 		}
 	}
 
-	public function registrar_casa(){
-		if($this->input->post()){
-			$calle = $this->input->post('calle');
-			$colonia = $this->input->post('colonia');
-			$familia = $this->input->post('familia');
-			$numero = $this->input->post('numero');
-			$tel_casa = $this->input->post('telefono');
-			$inserta_casa = $this->casa_model->registra_casa($calle,$colonia,$familia,$numero,$tel_casa);
-			if($inserta_casa){
-				$result = $this->casa_model->obtener_id($calle,$colonia,$familia,$numero,$tel_casa);
-				$id_casa = $result->id;
-				echo json_encode($id_casa);
+	public function calles(){
+		if($this->session->userdata('tipo')==2){
+			$this->load->view('presidente/header');
+			$this->load->view('presidente/calles');
+			$this->load->view('presidente/footer');
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function registrar_calle(){
+		if($this->session->userdata('tipo')==2){
+			$this->load->view('presidente/header');
+			$this->load->view('presidente/registrar_calle');
+			$this->load->view('presidente/footer');
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function miembros(){
+		if($this->session->userdata('tipo')==2){
+			$this->load->view('presidente/header');
+			$this->load->view('presidente/miembros');
+			$this->load->view('presidente/footer');
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function registrar_miembro(){
+		if($this->session->userdata('tipo')==2){
+			$colonia = $this->session->userdata('colonia');
+			$calles = $this->calle_model->get_calles($colonia);
+			$data = array('calles'=>$calles);
+			$this->load->view('presidente/header');
+			$this->load->view('presidente/registrar_miembro',$data);
+			$this->load->view('presidente/footer');
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function representantes(){
+		if($this->session->userdata('tipo')==2){
+			$this->load->view('presidente/header');
+			$this->load->view('presidente/representantes');
+			$this->load->view('presidente/footer');
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function registrar_representantes(){
+		if($this->session->userdata('tipo')==2){
+			$colonia = $this->session->userdata('colonia');
+			$calles = $this->calle_model->get_calles($colonia);
+			$data = array('calles' => $calles);
+			$this->load->view('presidente/header');
+			$this->load->view('presidente/registrar_representantes',$data);
+			$this->load->view('presidente/footer');
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function inserta_calles(){
+		if($this->session->userdata('tipo')==2){
+			if($this->input->post()){
+				$calles = $this->input->post('calles');
+				$colonia = $this->session->userdata('colonia');
+				foreach($calles as $row){
+					$calle = $row;
+					$inserta_calle = $this->calle_model->registra_calle($calle,$colonia);
+				}
+				echo json_encode($inserta_calle);
 			} else{
-				echo json_encode($inserta_casa);
+				echo json_encode(false);
 			}
 		} else{
-			$resp = false;
-			echo json_encode($resp);
-		}
-	}
-	
-	public function resibe_datos_colono(){
-		if($this->input->post()){
-			$datos = $this->input->post('colonos');
-			$array_colono = array();
-			$cont1 = 0;
-			foreach($datos as $row) {
-				$Casa = $datos[$cont1][0];
-				$ApellidoPaterno = $datos[$cont1][1];
-				$ApellidoMaterno = $datos[$cont1][2];
-				$FechaNacimiento = $datos[$cont1][3];
-				$Estatura = $datos[$cont1][4];
-				$Nombre = $datos[$cont1][5];
-				$Peso = $datos[$cont1][6];
-				$Email = $datos[$cont1][7];
-				$Sexo = $datos[$cont1][8];
-				$Tel_celular = $datos[$cont1][9];
-				$inserta_colono = $this->colono_model->inserta_colono($Casa,$ApellidoPaterno,$ApellidoMaterno,$FechaNacimiento,$Estatura,$Nombre,$Peso,$Email,$Sexo,$Tel_celular);
-				$cont1++;
-			}
-			echo json_encode($inserta_colono);
-		} else{
-			$resp = false;
-			echo json_encode($resp);
+			$this->session->sess_destroy();
+			redirect('ecolonia');
 		}
 	}
 
 	public function logout(){
-		if($this->input->post()){
-		redirect('ecolonia');
+		if($this->session->userdata('tipo')==2){
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
 		}
-	}	
+	}
+
+	public function inserta_miembros(){
+		if($this->session->userdata('tipo')==2){
+			if($this->input->post()){
+				$datos = $this->input->post('miembros');
+				$colonia = $this->session->userdata('colonia');
+				$comite = $this->session->userdata('comite');
+				$tel_casa = "";
+				$Estatura = "";
+				$Peso = "";
+				$cont = 0;
+				$datos_usuarios = array();
+				foreach ($datos as $row) {
+					$nombre = $datos[$cont][0];
+					$apellidoP = $datos[$cont][1];
+					$apellidoM = $datos[$cont][2];
+					$fecha = $datos[$cont][3];
+					$sexo = $datos[$cont][4];
+					$puesto = $datos[$cont][5];
+					$email = $datos[$cont][6];
+					$telefono = $datos[$cont][7];
+					$calle = $datos[$cont][8];
+					$numero = $datos[$cont][9];
+					$registra_casa = $this->casa_model->registra_casa($calle,$colonia,$apellidoP,$numero,$tel_casa);
+					if($registra_casa){
+						$id_casa = $this->casa_model->obtener_id($calle,$colonia,$apellidoP,$numero,$tel_casa);
+						$registra_colono = $this->colono_model->inserta_colono($id_casa->id,$apellidoP,$apellidoM,$fecha,$Estatura,$nombre,$Peso,$email,$sexo,$telefono);
+						if($registra_colono){
+							$id_miembro = $this->colono_model->get_id($apellidoP,$apellidoM,$nombre,$id_casa->id);
+							$registra_miembro = $this->comitecolono_model->registra_miembro($comite,$id_miembro->Id,$puesto);
+							if($registra_miembro){
+								$usuario = $nombre.$apellidoP;
+								$str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+								$contrasena = "";
+									for($i=0;$i<8;$i++) {
+									$contrasena .= substr($str,rand(0,62),1);
+								}
+								$tipo = 3;
+								$registra_usuario = $this->usuario_model->registra_usuario($usuario, $contrasena, $tipo);
+								if($registra_usuario){
+									$usuario_contrasena = array('usuario'=>$usuario, 'contrasena'=>$contrasena);
+									$datos_usuarios [] = $usuario_contrasena;
+									$id_usuario = $this->usuario_model->get_id($usuario, $contrasena, $tipo);
+									$res_iu = $this->colono_usuario_model->inserta_usuario($id_miembro->Id, $id_usuario->Id);
+								} else{
+									echo json_encode($registra_usuario);
+									return;
+								}
+							} else{
+								echo json_encode($registra_miembro);
+								return;
+							}
+						} else{
+							echo json_encode($registra_colono);
+							return;
+						}
+					} else{
+						echo json_encode($id_casa);
+						return;
+					}
+					$cont++;
+				}
+				$datos_enviar = array('resp' => true, 'datos' => $datos_usuarios);
+				echo json_encode($datos_enviar);
+			} else{
+				redirect('presidente');
+			}
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function inserta_representantes(){
+		if($this->session->userdata('tipo')==2){
+			if($this->input->post()){
+				$datos = $this->input->post('miembros');
+				$colonia = $this->session->userdata('colonia');
+				$comite = $this->session->userdata('comite');
+				$tel_casa = "";
+				$Estatura = "";
+				$Peso = "";
+				$cont = 0;
+				$datos_usuarios = array();
+				foreach ($datos as $row) {
+					$nombre = $datos[$cont][0];
+					$apellidoP = $datos[$cont][1];
+					$apellidoM = $datos[$cont][2];
+					$fecha = $datos[$cont][3];
+					$sexo = $datos[$cont][4];
+					$calle_rep = $datos[$cont][5];
+					$email = $datos[$cont][6];
+					$telefono = $datos[$cont][7];
+					$calle = $datos[$cont][8];
+					$numero = $datos[$cont][9];
+					$registra_casa = $this->casa_model->registra_casa($calle,$colonia,$apellidoP,$numero,$tel_casa);
+					if($registra_casa){
+						$id_casa = $this->casa_model->obtener_id($calle,$colonia,$apellidoP,$numero,$tel_casa);
+						$registra_colono = $this->colono_model->inserta_colono($id_casa->id,$apellidoP,$apellidoM,$fecha,$Estatura,$nombre,$Peso,$email,$sexo,$telefono);
+						if($registra_colono){
+							$id_rep = $this->colono_model->get_id($apellidoP,$apellidoM,$nombre,$id_casa->id);
+							$registra_representante = $this->catalogocalle_colono_model->registra_representante($calle_rep,$id_rep->Id,$comite);
+							if($registra_representante){
+								$usuario = $nombre.$apellidoP;
+								$str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+								$contrasena = "";
+								for($i=0;$i<8;$i++) {
+									$contrasena .= substr($str,rand(0,62),1);
+								}
+								$tipo = 4;
+								$registra_usuario = $this->usuario_model->registra_usuario($usuario, $contrasena, $tipo);
+								if($registra_usuario){
+									$usuario_contrasena = array('usuario'=>$usuario, 'contrasena'=>$contrasena);
+									$datos_usuarios [] = $usuario_contrasena;
+									$id_usuario = $this->usuario_model->get_id($usuario, $contrasena, $tipo);
+									$res_iu = $this->colono_usuario_model->inserta_usuario($id_rep->Id, $id_usuario->Id);
+								} else{
+									echo json_encode($registra_usuario);
+									return;
+								}
+							} else{
+								echo json_encode($registra_representante);
+								return;
+							}
+						} else{
+							echo json_encode($registra_colono);
+							return;
+						}
+					} else{
+						echo json_encode($id_casa);
+						return;
+					}
+					$cont++;
+				}
+				$datos_enviar = array('resp' => true, 'datos' => $datos_usuarios);
+				echo json_encode($datos_enviar);
+			} else{
+				redirect('presidente');
+			}
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
 }

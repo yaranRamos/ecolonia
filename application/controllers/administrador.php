@@ -18,52 +18,68 @@ class Administrador extends CI_Controller {
 
 	public function index()	{
 		if($this->session->userdata('tipo')==1){
-			$this->load->view('administrador/header_admon');
-			$this->load->view('administrador/menu_admon');
-			$this->load->view('administrador/footer_admon');
+			$this->load->view('administrador/header');
+			$this->load->view('administrador/menu');
+			$this->load->view('administrador/footer');
 		} else{
 			$this->session->sess_destroy();
 			redirect('ecolonia');
 		}
 	}
 
-	public function menu_estructura(){
+	public function estructura(){
 		if($this->session->userdata('tipo')==1){
-			$this->load->view('administrador/header_admon');
-			$this->load->view('administrador/menu_estructura');
-			$this->load->view('administrador/footer_admon');
+			$this->load->view('administrador/header');
+			$this->load->view('administrador/estructura');
+			$this->load->view('administrador/footer');
 		} else{
 			$this->session->sess_destroy();
 			redirect('ecolonia');
 		}
 	}
 
-	public function formulario_registrar_comite(){
-		if($this->session->userdata('tipo')==1){
-			// Obtenemos estados y los mandamos a la vista
-			$estados = $this->estado_model->get_estados();
-			$data = array(
-				'estado' => $estados
-			);
-			$this->load->view('administrador/header_admon');
-			$this->load->view('administrador/formulario_registrar_comite',$data);
-			$this->load->view('administrador/footer_admon');
-		} else{
-			$this->session->sess_destroy();
-			redirect('ecolonia');
-		}
-	}
-
-	public function formulario_registrar_colonia(){
+	public function comites(){
 		if($this->session->userdata('tipo')==1){
 			// Obtenemos estados y los mandamos a la vista
 			$estados = $this->estado_model->get_estados();
 			$data = array(
 				'estado' => $estados
 			);
-			$this->load->view('administrador/header_admon');
-			$this->load->view('administrador/formulario_registrar_colonia',$data); 
-			$this->load->view('administrador/footer_admon');
+			$this->load->view('administrador/header');
+			$this->load->view('administrador/comites',$data); 
+			$this->load->view('administrador/footer');
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function registrar_comite(){
+		if($this->session->userdata('tipo')==1){
+			// Obtenemos estados y los mandamos a la vista
+			$estados = $this->estado_model->get_estados();
+			$data = array(
+				'estado' => $estados
+			);
+			$this->load->view('administrador/header');
+			$this->load->view('administrador/registrar_comite',$data);
+			$this->load->view('administrador/footer');
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function colonias(){
+		if($this->session->userdata('tipo')==1){
+			// Obtenemos estados y los mandamos a la vista
+			$estados = $this->estado_model->get_estados();
+			$data = array(
+				'estado' => $estados
+			);
+			$this->load->view('administrador/header');
+			$this->load->view('administrador/colonias',$data); 
+			$this->load->view('administrador/footer');
 		} else{
 			$this->session->sess_destroy();
 			redirect('ecolonia');
@@ -71,6 +87,22 @@ class Administrador extends CI_Controller {
 	}
 
 	public function registrar_colonia(){
+		if($this->session->userdata('tipo')==1){
+			// Obtenemos estados y los mandamos a la vista
+			$estados = $this->estado_model->get_estados();
+			$data = array(
+				'estado' => $estados
+			);
+			$this->load->view('administrador/header');
+			$this->load->view('administrador/registrar_colonia',$data); 
+			$this->load->view('administrador/footer');
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function inserta_colonia(){
 		if($this->session->userdata('tipo')==1){
 			if($this->input->post()){
 				$id_colonia = $this->input->post('nombre');
@@ -80,13 +112,10 @@ class Administrador extends CI_Controller {
 				$diagnostico = $this->input->post('diagnostico');
 				$extencion = $this->input->post('extencion');
 				$status = 1;
-
-				// Validamos si la colonia existe
 				$colonia = $this->colonia_model->registra_colonia($id_colonia,$FechaFun,$NumeroHabitantes,$ubicacion,$diagnostico,$extencion,$status);
 				echo json_encode($colonia);
 			} else{
-				$resp = false;
-				echo json_encode($resp);
+				echo json_encode(false);
 			}
 		} else{
 			$this->session->sess_destroy();
@@ -94,7 +123,7 @@ class Administrador extends CI_Controller {
 		}
 	}
 
-	public function registrar_comites(){
+	public function inserta_comite(){
 		if($this->session->userdata('tipo')==1){
 			if ($this->input->post()) {
 				$estado=$this->input->post('estado');
@@ -132,11 +161,11 @@ class Administrador extends CI_Controller {
 					$Sexo = $this->input->post('sexo');
 					$Tel_celular = $this->input->post('cel');
 					$this->colono_model->inserta_colono($Casa,$ApellidoPaterno,$ApellidoMaterno,$FechaNacimiento,$Estatura,$Nombre,$Peso,$Email,$Sexo,$Tel_celular);
-					$colono = $this->colono_model->obtiene_id($Email,$Tel_celular);
+					$colono = $this->colono_model->get_id($ApellidoPaterno,$ApellidoMaterno,$Nombre,$Casa);
 					$id_colono = $colono->Id;
 					//insertar presidente de comite
 					$Puesto=1;
-					$presidente = $this->comitecolono_model->registrapresidente($id_comite,$id_colono,$Puesto);
+					$presidente = $this->comitecolono_model->registra_miembro($id_comite,$id_colono,$Puesto);
 					//insertat presidente en usuario
 					$usuario = $Nombre.$ApellidoPaterno;
 					$str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
@@ -148,7 +177,7 @@ class Administrador extends CI_Controller {
 					$res_ru = $this->usuario_model->registra_usuario($usuario, $contrasena, $tipo);
 					if($res_ru){
 						$id_usuario = $this->usuario_model->get_id($usuario, $contrasena, $tipo);
-						$res_iu = $this->colono_usuario_model->inserta_usuario($id_colono, $id_usuario->Id);
+						$res_iu = $this->colono_usuario_model->inserta_2_usuario($id_colono, $id_usuario->Id);
 						if($res_iu){
 							$res = true;
 							$datos = array('resp'=>$res, 'usuario'=>$usuario, 'contrasena'=>$contrasena);

@@ -13,7 +13,7 @@
 						</div>
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 							<fieldset>
-								<legend>INICIAR SESIÓN</legend>
+								<legend>Iniciar Sesión</legend>
 								<form action="<?php echo site_url('ecolonia/logueo') ?>" method="POST" id="form_sesion">
 									<label for="usuario">Usuario:</label>
 									<input type="text" name="usuario">
@@ -26,8 +26,11 @@
 										<option value="2">Presidente CB</option>
 										<option value="3">Miembros CB</option>
 										<option value="4">Representante de Calle</option>
+										<option value="5">Colono</option>
 									</select>
-									<input type="submit" value="INICIAR">
+									<label>
+										<input type="submit" value="Iniciar" class="btn-lg btn-block btn-azul">
+									</label>
 								</form>
 							</fieldset>
 							<?php if ($mensaje != ""){ ?>

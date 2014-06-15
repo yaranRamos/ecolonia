@@ -25,4 +25,12 @@ class Casa_model extends CI_Model{
 						->get()
 						->row();
 	}
+
+	public function get_casas($calle,$colonia){
+		return $this->db->where('Calle',$calle)
+						->where('Colonia',$colonia)
+						->from('casa')
+						->get()
+						->result();
+	}
 }

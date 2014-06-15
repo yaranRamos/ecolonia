@@ -18,4 +18,10 @@ class Calle_model extends CI_Model{
 						->get('catalogocalle')
 						->row();
 	}
+
+	public function get_calles($colonia){
+		return $this->db->where('Colonia',$colonia)
+						->get('catalogocalle')
+						->result();
+	}
 }
