@@ -1,11 +1,12 @@
 var calles =  [];
 var cadena = "";
 var contador = 0;
+var resp = 0;
 $('#agregar').click(function(){
 	var nombre = $('#nombre').val();
 	if(!nombre == ""){
 		calles.push(nombre);
-		cadena += "<li><spam class='glyphicon glyphicon-road'></spam>&nbsp;"+nombre+" <spam id='calle-"+contador+"' class='glyphicon glyphicon-remove-sign pull-right btn-remove'></spam></li>";
+		cadena += "<li><spam class='glyphicon glyphicon-road'></spam>&nbsp;"+nombre+" <spam id='calle-"+contador+"' onclick='prueba(\"calle-"+contador+"\");' class='glyphicon glyphicon-remove-sign pull-right btn-remove'></spam></li>";
 		contador++;
 		$('#nombre').val("");
 		$('#nombre').focus();
@@ -16,24 +17,27 @@ $('#agregar').click(function(){
 		$('#alert').modal('show');
 	}
 
-	$("spam").click(function() {
-        var ID = $(this).attr("id");
-        var i = ID.split('-');
-        var index = i[1];
-      	calles.splice(index,1);
-        var tmp = calles;
-        calles = [];
-        $("#calles").html("");
-        cadena = "";
-        contador = 0;
-        for(var i = 0; i<tmp.length; i++){
-        	cadena += "<li><spam class='glyphicon glyphicon-road'></spam>&nbsp;"+tmp[i]+" <spam id='calle-"+contador+"' class='glyphicon glyphicon-remove-sign pull-right btn-remove'></spam></li>";
-        	contador++;
-        }
-        $("#calles").html(cadena);
-        
-    });
+	if(resp == 1){
+		alert("si se manda a llamar");
+	}
 });
+
+function prueba(calle){
+	var i = calle.split('-');
+    var index = i[1];
+  	calles.splice(index,1);
+  	var tmp = calles;
+    calles = [];
+    $("#calles").html("");
+    cadena = "";
+    contador = 0;
+    for(var i = 0; i<tmp.length; i++){
+    	cadena += "<li><spam class='glyphicon glyphicon-road'></spam>&nbsp;"+tmp[i]+" <spam id='calle-"+contador+"' onclick='prueba(\"calle-"+contador+"\");' class='glyphicon glyphicon-remove-sign pull-right btn-remove'></spam></li>";
+    	contador++;
+    }
+    calles = tmp;
+    $("#calles").html(cadena);
+}
 
 $('#aceptar').click(function(){
 	$('#nombre').focus();
