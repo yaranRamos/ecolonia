@@ -17,7 +17,7 @@
 				<div class="row">
 					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 						<fieldset>
-							<legend>Calle</legend>
+							<legend>Registro Calle</legend>
 							<div class="row">
 								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 									<label for="nombre">
@@ -40,7 +40,7 @@
 							<legend>Lista</legend>
 							<div class="row">
 								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-									<ul class="integrantes" id="calles"></ul>
+									<ul class="integrantes" id="calles"></ul><!--AQUI AGREGA LOS ELEMENTOS-->
 								</div>
 							</div>
 							<div class="row">
@@ -64,7 +64,7 @@
 					</div>
 					<div class="modal-body">
 						<p id="texto_alert"></p>
-						<input type="button" value="Aceptar" data-dismiss="modal" class="btn-lg btn-block btn-azul">
+						<input type="button" value="Aceptar" data-dismiss="modal" class="btn-lg btn-block btn-azul" id="aceptar">
 					</div>
 				</div>
 			</div>

@@ -52,8 +52,8 @@ $('#registrar_colonia').click(function(){
 			}
 		});
 	} else{
-		$('#titulo_alert').html("¡REVISA TUS DATOS!");
-		$('#texto_alert').html("Ingresa los datos requeridos");
+		$('#titulo_alert').html("¡ATENCION!");
+		$('#texto_alert').html("INGRESA LOS DATOS REQUERIDOS");
 		$('#alert').modal('show');
 	}
 });

@@ -7,9 +7,13 @@
 		<link rel="stylesheet" type="text/css" href="css/ecolonia-estilo.css"/>
 		<link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
 		<link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css">
+		<script type="text/javascript"
+    		src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCEaSEgbh5KcHPXA4tc4LrFgjfmAmFFCao&sensor=true">
+  		</script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/miJs.js"></script>
+		<script type="text/javascript" src="js/mapa.js"></script>
 		<meta charset="UTF-8"/>
 	</head>
 	<body>

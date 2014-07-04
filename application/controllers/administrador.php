@@ -45,7 +45,7 @@ class Administrador extends CI_Controller {
 			$data = array(
 				'estado' => $estados
 			);
-			$this->load->view('administrador/header');
+	$this->load->view('administrador/header');
 			$this->load->view('administrador/comites',$data); 
 			$this->load->view('administrador/footer');
 		} else{
@@ -242,6 +242,17 @@ class Administrador extends CI_Controller {
 				echo json_encode($colonias);
 			}
 		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function get_comites(){
+		if ($this->input->post()) {
+			$id_municipio = $this->input->post('municipio_id');
+			$comites = $this->comite_model->get_comites($id_municipio);
+			echo json_encode($comites);
+		}else{
 			$this->session->sess_destroy();
 			redirect('ecolonia');
 		}

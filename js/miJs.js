@@ -89,7 +89,7 @@ function getMunicipio(estado_id){
  		var miJson = jQuery.parseJSON(resp);
  		if(miJson){
  			for(var item in miJson){
- 				colonias.append('<option value = "'+ miJson[item].Id +'">' + miJson[item].Nombre + '</option>');
+ 				colonias.append('<option value = "'+ miJson[item].Id +'">'+miJson[item].Nombre+'</option>');
  			}
  		}else{
  			alert("Colonias No Disponibles");

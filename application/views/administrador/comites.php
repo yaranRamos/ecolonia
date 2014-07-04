@@ -16,6 +16,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<fieldset>
+						<legend>Comités</legend>
 							<div class="row">
 								<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 									<label for="">Estado</label>
@@ -42,9 +43,8 @@
 									            <tr>
 													<th>Nombre</th>
 													<th>Fecha Fundación</th>
-													<th>No. Habitantes</th>
-													<th>Ubicación</th>
-													<th>Diagnostico Inicial</th>
+													<th>No. Integrantes</th>
+													<th>Fecha Terminacion</th>
 									            </tr>
 									        </thead>
 									        <tbody>
@@ -74,14 +74,14 @@
 				if(id != ""){
 					$.ajax({
 						type: "POST",
-						url: "http://localhost/ecolonia/index.php/administrador/get_colonias",
+						url: "http://localhost/ecolonia/index.php/administrador/get_comites",
 						data:{municipio_id:id},
 						success: function(msg){
 							var datos = jQuery.parseJSON(msg);
 							var cadena = "";
-							cadena += "<table id='"+id+"' class='table table-hover'><thead><tr><th>Nombre</th><th>Fecha Fundación</th><th>No. Habitantes</th><th>Ubicación</th><th>Diagnostico Inicial</th></tr></thead><tbody>";
+							cadena += "<table id='"+id+"' class='table table-hover'><thead><tr><th>Nombre</th><th>Fecha Fundación</th><th>No. Integrantes</th><th>Fecha Terminacion</th></tr></thead><tbody>";
 							for(var i = 0; i < datos.length; i++){
-								cadena += "<tr><td>"+datos[i].Nombre+"</td><td>"+datos[i].FechaFun+"</td><td>"+datos[i].NumeroHabitantes+"</td><td>"+datos[i].Ubicacion+"</td><td>"+datos[i].Diagnostico_inicial+"</td></tr>"
+								cadena += "<tr><td>"+datos[i].nombre+"</td><td>"+datos[i].fechaFundacion+"</td><td>"+datos[i].numeroIntegrantes+"</td><td>"+datos[i].fechaTerminacion+"</td></tr>"
 							}
 							cadena += "</tbody></table>";
 							$('#tabla').html(cadena);

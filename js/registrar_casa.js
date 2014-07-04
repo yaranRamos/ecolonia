@@ -68,15 +68,15 @@ $('#enviar_datos').click(function(){
 						scrollTop: $('#usuario_contrasena').offset().top
 					},1000);
 				} else{
-					$('#titulo_alert').html("Error..!!");
-					$('#texto_alert').html("Error al guardar los datos");
+					$('#titulo_alert').html("!ATENCION¡");
+					$('#texto_alert').html("ERROR AL GUARDAR LOS DATOS");
 					$('#alert').modal('show');
 				}
 			}
 		});
 	} else{
-		$('#titulo_alert').html("Error..!!");
-		$('#texto_alert').html("Agrega los Datos requeridos");
+		$('#titulo_alert').html("!ATENCION¡");
+		$('#texto_alert').html("AGREGA LOS DATOS REQUERIDOS");
 		$('#alert').modal('show');
 	}
 });

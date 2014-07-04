@@ -69,8 +69,13 @@ class Presidente extends CI_Controller {
 
 	public function calles(){
 		if($this->session->userdata('tipo')==2){
+			//consultamos calles/colonia/municipio/estado
+			$calles = $this->calle_model->get_all();
+			$data = array(
+				'calle'=>$calles
+			);
 			$this->load->view('presidente/header');
-			$this->load->view('presidente/calles');
+			$this->load->view('presidente/calles',$data);
 			$this->load->view('presidente/footer');
 		} else{
 			$this->session->sess_destroy();

@@ -1,23 +1,50 @@
-var calles = [];
+var calles =  [];
 var cadena = "";
+var contador = 0;
 $('#agregar').click(function(){
 	var nombre = $('#nombre').val();
 	if(!nombre == ""){
 		calles.push(nombre);
-		cadena += "<li><spam class='glyphicon glyphicon-road'></spam>&nbsp;"+nombre+"</li>";
+		cadena += "<li><spam class='glyphicon glyphicon-road'></spam>&nbsp;"+nombre+" <spam id='calle-"+contador+"' class='glyphicon glyphicon-remove-sign pull-right btn-remove'></spam></li>";
+		contador++;
 		$('#nombre').val("");
 		$('#nombre').focus();
 		$("#calles").html(cadena);
 	} else{
-		$('#titulo_alert').html("Error..!!");
-		$('#texto_alert').html("Ingrese los datos requeridos");
+		$('#titulo_alert').html("!ATENCION¡");
+		$('#texto_alert').html("INGRESA LOS DATOS REQUERIDOS");
 		$('#alert').modal('show');
 	}
+
+	$("spam").click(function() {
+        var ID = $(this).attr("id");
+        var i = ID.split('-');
+        var index = i[1];
+      	calles.splice(index,1);
+        var tmp = calles;
+        calles = [];
+        $("#calles").html("");
+        cadena = "";
+        contador = 0;
+        for(var i = 0; i<tmp.length; i++){
+        	cadena += "<li><spam class='glyphicon glyphicon-road'></spam>&nbsp;"+tmp[i]+" <spam id='calle-"+contador+"' class='glyphicon glyphicon-remove-sign pull-right btn-remove'></spam></li>";
+        	contador++;
+        }
+        $("#calles").html(cadena);
+        
+    });
 });
+
+$('#aceptar').click(function(){
+	$('#nombre').focus();
+});
+
+
 $('#cancelar').click(function(){
 	calles = [];
 	cadena = "";
 	$("#calles").html(cadena);
+	contador = 0;
 });
 $('#guardar').click(function(){
 	$.ajax({
@@ -35,10 +62,20 @@ $('#guardar').click(function(){
 				$('#texto_alert').html("Registro guardado con exito");
 				$('#alert').modal('show');
 			} else{
-				$('#titulo_alert').html("Error..!!");
-				$('#texto_alert').html("error al guardar el registro");
+				$('#titulo_alert').html("!ATENCION¡");
+				$('#texto_alert').html("ERROR AL GUARDAR LOS DATOS");
 				$('#alert').modal('show');
 			}
 		}
 	});
 });
+
+/*$(document).ready(function(){
+	$("#element").hover(
+	function(){
+		alert("Olis");
+	},
+	function(){
+	$(this).css("color","#900");
+	});
+});*/

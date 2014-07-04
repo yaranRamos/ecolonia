@@ -395,3 +395,25 @@ input[type='button']:disabled {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
+
+.menu:hover{
+  background-color: #F2F2F2;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#mapa{
+  /*border: 1px solid;*/
+  height: 8.5em;
+}
+
+.btn-remove{
+  cursor: pointer;
+  font-size:18px;
+}
+
+.btn-remove:hover{
+  color:#E3534B;
+}

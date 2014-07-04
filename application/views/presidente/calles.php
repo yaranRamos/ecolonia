@@ -16,6 +16,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<fieldset>
+						<legend>Calles</legend>
 							<div class="row">
 								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 									<div id="tabla">
@@ -23,13 +24,20 @@
 									        <thead>
 									            <tr>
 													<th>Nombre</th>
-													<th>Fecha Fundación</th>
-													<th>No. Habitantes</th>
-													<th>Ubicación</th>
-													<th>Diagnostico Inicial</th>
+													<th>Colonia</th>
+													<th>Municipio</th>
+													<th>Estado</th>
 									            </tr>
 									        </thead>
 									        <tbody>
+									        <?php foreach($calle as $row){ ?>
+												<tr>
+													<td><?php echo $row->nombre_calle?></td>
+													<td><?php echo $row->nombre_colonia?></td>
+													<td><?php echo $row->nombre_municipio?></td>
+													<td><?php echo $row->nombre_estado?></td>
+												</tr>
+									        <?php } ?>
 									        </tbody>
 									    </table>
 									</div>

@@ -16,6 +16,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<fieldset>
+							<legend>Colonias</legend>
 							<div class="row">
 								<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 									<label for="">Estado</label>
@@ -89,7 +90,6 @@
 						}
 					});
 				}
-				
 			});
 		</script>
 		<div class="modal dialogo fade" id="alert">

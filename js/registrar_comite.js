@@ -58,15 +58,15 @@ $('#registrar_comite').click(function(){
 						scrollTop: $('#usuario_contrasena').offset().top
 					},1000);
 				} else{
-					$('#titulo_alert').html("Error..!!");
-					$('#texto_alert').html("Error al guardar los datos");
+					$('#titulo_alert').html("!ATENCION¡");
+					$('#texto_alert').html("ERROR AL GUARDAR LOS DATOS");
 					$('#alert').modal('show');
 				}
 			}
 		});
 	} else{
-		$('#titulo_alert').html("Error..!!");
-		$('#texto_alert').html("Ingrese los datos requeridos");
+		$('#titulo_alert').html("!ATENCION¡");
+		$('#texto_alert').html("INGRESA LOS DATOS REQUERIDOS");
 		$('#alert').modal('show')
 	}
 });

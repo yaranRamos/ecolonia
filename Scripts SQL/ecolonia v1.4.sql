@@ -53,7 +53,7 @@ DROP TABLE IF EXISTS `ecolonia`.`colonia` ;
 CREATE TABLE IF NOT EXISTS `ecolonia`.`colonia` (
   `Id` INT(11) NOT NULL AUTO_INCREMENT,
   `Municipio` INT(11) NOT NULL,
-  `Nombre` VARCHAR(30) NOT NULL DEFAULT 'Nombre',
+  `Nombre` VARCHAR(50) NOT NULL DEFAULT 'Nombre',
   `FechaFun` DATETIME NULL,
   `NumeroHabitantes` INT(11) NULL DEFAULT '0',
   `Ubicacion` VARCHAR(100) NULL DEFAULT 'Ubicacion',

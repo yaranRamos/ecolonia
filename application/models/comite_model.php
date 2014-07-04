@@ -19,4 +19,17 @@ class Comite_model extends CI_Model{
 						->get('comitedebarrio')
 						->row();
 	}
+
+	public function get_comites($id_municipio){
+		return $this->db->select('comitedebarrio.Nombre as nombre')
+						->select('comitedebarrio.FechaFundacion as fechaFundacion')
+						->select('comitedebarrio.Numero_Integrantes as numeroIntegrantes')
+						->select('comitedebarrio.FechaTerminacion as fechaTerminacion')
+						->from('comitedebarrio')
+						->join('colonia','comitedebarrio.Colonia = colonia.Id')
+						->join('municipio','colonia.Municipio = municipio.Id')
+						->where('municipio.Id',$id_municipio)
+						->get()
+						->result();
+	}
 }

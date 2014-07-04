@@ -24,4 +24,17 @@ class Calle_model extends CI_Model{
 						->get('catalogocalle')
 						->result();
 	}
+
+	public function get_all(){
+		return $this->db->select('catalogocalle.Nombre as nombre_calle')
+						->select('colonia.Nombre as nombre_colonia')
+						->select('municipio.Nombre as nombre_municipio')
+						->select('estado.Nombre as nombre_estado')
+						->from('catalogocalle')
+						->join('colonia','catalogocalle.Colonia = colonia.Id')
+						->join('municipio','colonia.Municipio = municipio.Id')
+						->join('estado','municipio.Estado = estado.Id')
+						->get()
+						->result();
+	}
 }
