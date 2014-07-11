@@ -62,8 +62,8 @@ $('#guardar').click(function(){
 				cadena = "";
 				$("#calles").html(cadena);
 	
-				$('#titulo_alert').html("Aviso");
-				$('#texto_alert').html("Registro guardado con exito");
+				$('#titulo_alert').html("AVISO");
+				$('#texto_alert').html("REGISTRO GUARDADO CON EXITO");
 				$('#alert').modal('show');
 			} else{
 				$('#titulo_alert').html("!ATENCION¡");
@@ -73,13 +73,3 @@ $('#guardar').click(function(){
 		}
 	});
 });
-
-/*$(document).ready(function(){
-	$("#element").hover(
-	function(){
-		alert("Olis");
-	},
-	function(){
-	$(this).css("color","#900");
-	});
-});*/

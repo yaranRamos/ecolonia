@@ -37,8 +37,8 @@ $('#copia_datos').click(function(){
 		$('#numero_colono').val("");
 		$('#calle_colono').val("");
 	} else{
-		$('#titulo_alert').html("Error..!!");
-		$('#texto_alert').html("Agrega los Datos requeridos");
+		$('#titulo_alert').html("!ATENCION¡");
+		$('#texto_alert').html("AGREGAR LOS DATOS REQUERIDOS");
 		$('#alert').modal('show');
 	}
 });
@@ -65,8 +65,8 @@ $('#enviar_datos').click(function(){
 				cadena = "";
 				$("#integrantes").html(cadena);
 
-				$('#titulo_alert').html("Aviso");
-				$('#texto_alert').html("Los datos se guardaron correctamente");
+				$('#titulo_alert').html("AVISO");
+				$('#texto_alert').html("LOS DATOS SE GUARDARON CORRECTAMENTE");
 				$('#alert').modal('show');
 				var usuarios = datos.datos;
 				var cadena = "";

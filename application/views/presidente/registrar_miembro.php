@@ -70,6 +70,8 @@
 									<select id="puesto">
 										<option value="">Selecciona Puesto</option>
 										<option value="2">Tesorero</option>
+										<option value="3">Vocal</option>
+										<option value="4">Coordinador</option>
 									</select>
 								</div>
 							</div>
@@ -79,7 +81,7 @@
 									<input type="text" id="email_colono"/>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-									<label for="celular_colono">Telefono Celular</label>
+									<label for="celular_colono">Teléfono Celular</label>
 									<input type="text" id="celular_colono"/>
 								</div>
 							</div>
@@ -97,7 +99,7 @@
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 									<label for="numero_colono">
-										<spam class="glyphicon glyphicon-asterisk requerido"></spam>Numero
+										<spam class="glyphicon glyphicon-asterisk requerido"></spam>Número de Casa
 									</label>
 									<input type="text" id="numero_colono">
 								</div>
@@ -124,7 +126,7 @@
 									<input type="button" value="Cancelar" id="cancelar_envio" class="btn-lg btn-block btn-rojo">
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-									<input type="button" value="Cuardar" id="enviar_datos" class="btn-lg btn-block btn-azul">
+									<input type="button" value="Guardar" id="enviar_datos" class="btn-lg btn-block btn-azul">
 								</div>
 							</div>
 						</fieldset>

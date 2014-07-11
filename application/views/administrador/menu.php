@@ -5,7 +5,7 @@
 						Cerrar Sesión
 					</a>
  				</ul>
-			</div>
+			</div> 
 		</nav>
 		<section>
 			<div class="container">

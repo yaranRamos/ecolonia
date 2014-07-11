@@ -54,4 +54,42 @@ class Especial_model extends CI_Model{
 				 		->get()
 				 		->row();
 	}
+
+	public function get_miembros_comite($comite){
+		return $this->db->select('colono.Nombre as Nombre')
+						->select('colono.ApellidoPaterno as ApellidoPaterno')
+						->select('colono.ApellidoMaterno as ApellidoMaterno')
+						->select('casa.Numero as Numero')
+						->select('catalogocalle.Nombre as Nombre_calle')
+						->select('comitedebarrio.Nombre as Nombre_comite')
+						->select('comitedebarrio_has_colono.Puesto as Puesto')
+						->from('colono')
+						->join('casa','colono.Casa = casa.Id')
+						->join('catalogocalle','casa.Calle = catalogocalle.Id')
+						->join('comitedebarrio_has_colono','colono.Id = comitedebarrio_has_colono.colono_Id')
+						->join('comitedebarrio','comitedebarrio_has_colono.comitedebarrio_Id = comitedebarrio.Id')
+						->where('comitedebarrio.Id',$comite)
+						->get()
+						->result();
+	}
+
+	public function get_representantes_calle($comite){
+		return $this->db->select('col.Nombre as nombre_colono')
+						->select('col.ApellidoPaterno as ApellidoPaterno')
+						->select('col.ApellidoMaterno as ApellidoMaterno')
+						->select('cas.Numero as numero_casa')
+						->select('catacalle.Nombre as Nombre_calle')
+						->select('cb.Nombre as Nombre_comite')
+						->select('cll.Nombre as Nombre_calle_representa')
+						->from('colono as col')
+						->join('catalogocalle_has_colono as callcol','col.Id = callcol.colono_Id')
+						->join('catalogocalle as catcalle','callcol.catalogocalle_Id = catcalle.Id')
+						->join('casa as cas','col.Casa = cas.Id')
+						->join('catalogocalle as catacalle','cas.Calle = catacalle.Id')
+						->join('comitedebarrio as cb','callcol.comitedebarrio_Id = cb.Id')
+						->join('catalogocalle as cll','callcol.catalogocalle_Id = cll.Id')
+						->where('callcol.comitedebarrio_Id',$comite)
+						->get()
+						->result();
+	}
 }

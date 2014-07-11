@@ -25,7 +25,7 @@
 												<a href="<?php echo site_url('presidente/calles'); ?>" class="btn btn-lg btn-block btn-azul">Calles</a>
 											</label>
 											<label>
-												<a href="<?php echo site_url('presidente/miembros'); ?>" class="btn btn-lg btn-block btn-azul">Miembros del Comite de Barrio</a>
+												<a href="<?php echo site_url('presidente/miembros'); ?>" class="btn btn-lg btn-block btn-azul">Miembros del Comité de Barrio</a>
 											</label>
 											<label>
 												<a href="<?php echo site_url('presidente/representantes'); ?>" class="btn btn-lg btn-block btn-azul">Representantes de Calles</a>

@@ -57,8 +57,8 @@ $('#enviar_datos').click(function(){
 				cadena = "";
 				$("#integrantes").html(cadena);
 	
-				$('#titulo_alert').html("Aviso");
-				$('#texto_alert').html("Los datos se guardaron correctamente");
+				$('#titulo_alert').html("AVISO");
+				$('#texto_alert').html("LOS DATOS SE GUARDARON CON EXITO");
 				$('#alert').modal('show');
 				var usuarios = datos.datos;
 				var cadena = "";

@@ -81,7 +81,7 @@
 									<input type="text" id="email_colono"/>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-									<label for="celular_colono">Telefono Celular</label>
+									<label for="celular_colono">Teléfono Celular</label>
 									<input type="text" id="celular_colono"/>
 								</div>
 							</div>
@@ -99,7 +99,7 @@
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 									<label for="numero_colono">
-										<spam class="glyphicon glyphicon-asterisk requerido"></spam>Numero
+										<spam class="glyphicon glyphicon-asterisk requerido"></spam>Número de Casa
 									</label>
 									<input type="text" id="numero_colono">
 								</div>

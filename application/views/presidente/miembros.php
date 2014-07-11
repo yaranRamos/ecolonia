@@ -16,6 +16,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<fieldset>
+						<legend>Miembros Comité de Barrio</legend>
 							<div class="row">
 								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 									<div id="tabla">
@@ -23,13 +24,20 @@
 									        <thead>
 									            <tr>
 													<th>Nombre</th>
-													<th>Fecha Fundación</th>
-													<th>No. Habitantes</th>
-													<th>Ubicación</th>
-													<th>Diagnostico Inicial</th>
-									            </tr>
+													<th>Domicilio</th>
+													<th>Comité</th>
+													<th>Puesto</th>
+												</tr>
 									        </thead>
 									        <tbody>
+									        	<?php foreach($integrante as $row) { ?>
+													<tr>
+														<td><?php echo $row->Nombre." ".$row->ApellidoPaterno." ".$row->ApellidoMaterno;?></td>
+														<td><?php echo $row->Nombre_calle." #".$row->Numero;?></td>
+														<td><?php echo $row->Nombre_comite;?></td>
+														<td><?php if($row->Puesto == 1)echo "Presidente"; else if($row->Puesto == 2)echo "Tesorero"; elseif($row->Puesto == 3)echo"Vocal"; elseif($row->Puesto == 4)echo "Coordinador";?></td>
+													</tr>
+									        	<?php } ?>
 									        </tbody>
 									    </table>
 									</div>

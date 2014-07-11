@@ -16,6 +16,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<fieldset>
+							<legend>Representantes de Calle</legend>
 							<div class="row">
 								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 									<div id="tabla">
@@ -23,13 +24,20 @@
 									        <thead>
 									            <tr>
 													<th>Nombre</th>
-													<th>Fecha Fundación</th>
-													<th>No. Habitantes</th>
-													<th>Ubicación</th>
-													<th>Diagnostico Inicial</th>
+													<th>Domicilio</th>
+													<th>Comité</th>
+													<th>Calle a Representar</th>
 									            </tr>
 									        </thead>
 									        <tbody>
+									        	<?php foreach($representante as $row) { ?> 
+												<tr>
+													<th><?php echo $row->nombre_colono." ".$row->ApellidoPaterno." ".$row->ApellidoMaterno;?></th>
+													<th><?php echo $row->Nombre_calle." ".$row->numero_casa?></th>
+													<th><?php echo $row->Nombre_comite?></th>
+													<th><?php echo $row->Nombre_calle_representa?></th>
+												</tr>
+									        	<?php } ?>
 									        </tbody>
 									    </table>
 									</div>

@@ -15,6 +15,7 @@ class Presidente extends CI_Controller {
 		$this->load->model('usuario_model');
 		$this->load->model('colono_usuario_model');
 		$this->load->model('catalogocalle_colono_model');
+		$this->load->model('especial_model');
 	}
 
 	public function index(){
@@ -96,8 +97,14 @@ class Presidente extends CI_Controller {
 
 	public function miembros(){
 		if($this->session->userdata('tipo')==2){
+			// consulta
+			$comite = $this->session->userdata('comite');
+			$integrante = $this->especial_model->get_miembros_comite($comite);
+			$data = array(
+				'integrante' => $integrante
+			);
 			$this->load->view('presidente/header');
-			$this->load->view('presidente/miembros');
+			$this->load->view('presidente/miembros',$data);
 			$this->load->view('presidente/footer');
 		} else{
 			$this->session->sess_destroy();
@@ -121,8 +128,13 @@ class Presidente extends CI_Controller {
 
 	public function representantes(){
 		if($this->session->userdata('tipo')==2){
+			$comite = $this->session->userdata('comite');
+			$representantes = $this->especial_model->get_representantes_calle($comite);
+			$data = array(
+				'representante' => $representantes
+			);
 			$this->load->view('presidente/header');
-			$this->load->view('presidente/representantes');
+			$this->load->view('presidente/representantes',$data);
 			$this->load->view('presidente/footer');
 		} else{
 			$this->session->sess_destroy();
