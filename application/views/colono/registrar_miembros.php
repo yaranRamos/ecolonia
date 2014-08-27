@@ -65,8 +65,12 @@
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 									<label for="puesto">Rol Familiar</label>
-									<select id="puesto" disabled>
+									<select id="puesto">
 										<option value="">Selecciona Rol Familiar</option>
+										<option value="1">Abuelo</option>
+										<option value="2">Papá</option>
+										<option value="3">Mamá</option>
+										<option value="4">Hijo</option>
 									</select>
 								</div>
 							</div>

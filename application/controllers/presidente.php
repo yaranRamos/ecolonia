@@ -136,7 +136,7 @@ class Presidente extends CI_Controller {
 			$this->load->view('presidente/header');
 			$this->load->view('presidente/representantes',$data);
 			$this->load->view('presidente/footer');
-		} else{
+		}else{
 			$this->session->sess_destroy();
 			redirect('ecolonia');
 		}

@@ -1,9 +1,9 @@
 		<nav>
 			<div class="container">
 				<ul class="navbar izquierda">
- 					<li><a href="<?php echo site_url('colono'); ?>">Menú</a></li>
- 					<li><a href="<?php echo site_url('colono/estructura'); ?>">Estructura</a></li>
- 					<li><a href="<?php echo site_url('colono/miembros'); ?>">Miembros</a></li>
+ 					<li><a href="<?php echo site_url('representante_calle'); ?>">Menú</a></li>
+ 					<li><a href="<?php echo site_url('representante_calle/estructura'); ?>">Estructura</a></li>
+ 					<li><a href="<?php echo site_url('representante_calle/casas'); ?>">Miembros</a></li>
  				</ul>
  				<ul class="navbar derecha">
 					<a href="<?php echo site_url('colono/logout'); ?>" class="btn btn-rojo">

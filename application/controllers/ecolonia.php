@@ -46,6 +46,7 @@ class Ecolonia extends CI_Controller {
 					redirect('representante_calle');
 				} elseif($tipo == 5){
 					$id_casa = $this->especial_model->get_id_casa($usuario, $contrasena, $tipo);
+					//exit($id_casa);
 					$this->session->set_userdata('casa',$id_casa->Id_casa);
 					redirect('colono');
 				} else{

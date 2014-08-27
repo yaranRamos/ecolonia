@@ -61,6 +61,7 @@ class Colono extends CI_Controller {
 			if($this->input->post()){
 				$datos = $this->input->post('miembros');
 				$casa = $this->session->userdata('casa');
+				exit($casa);
 				$cont = 0;
 				foreach($datos as $row) {
 					$nombre = $datos[$cont][0];
