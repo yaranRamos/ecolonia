@@ -26,7 +26,7 @@ function getMunicipio(estado_id){
 	// cargamos con ajax los municipios del estado
 	municipios.find('option').remove().end().append('<option value="">Selecciona Municipio</option>').val('');
 	jQuery.ajax({
-		url:'http://localhost/ecolonia/index.php/administrador/get_municipios',
+		url:'http://localhost/php/ecolonia/index.php/administrador/get_municipios',
 		timeout:3000,
 		type:'post',
 		data:{
@@ -52,7 +52,7 @@ function getMunicipio(estado_id){
  	// cargamos con ajax las colonias del municipio
  	colonias.find('option').remove().end().append('<option value="">Selecciona Colonia</option>').val('');
  	jQuery.ajax({
- 		url:'http://localhost/ecolonia/index.php/administrador/get_colonias',
+ 		url:'http://localhost/php/ecolonia/index.php/administrador/get_colonias',
 		timeout:3000,
 		type:'post',
 		data:{
@@ -79,7 +79,7 @@ function getMunicipio(estado_id){
  	// cargamos con ajax las colonias del municipio
  	colonias.find('option').remove().end().append('<option value="">Selecciona Colonia</option>').val('');
  	jQuery.ajax({
- 		url:'http://localhost/ecolonia/index.php/administrador/get_colonias1',
+ 		url:'http://localhost/php/ecolonia/index.php/administrador/get_colonias1',
 		timeout:3000,
 		type:'post',
 		data:{

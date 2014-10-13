@@ -6,17 +6,11 @@ class Calle_model extends CI_Model{
 	}
 
 	public function registra_calle($calle,$colonia){
-		return $this->db->set('Nombre',$calle)
-						->set('Colonia',$colonia)
-						->insert('catalogocalle');
-	}
+		$this->db->set('Nombre',$calle)
+				 ->set('Colonia',$colonia)
+				 ->insert('catalogocalle');
 
-	public function obtiene_id($calle,$colonia){
-		return $this->db->select('Id')
-						->where('Nombre',$calle)
-						->where('Colonia',$colonia)
-						->get('catalogocalle')
-						->row();
+		return $this->db->insert_id();
 	}
 
 	public function get_calles($colonia){

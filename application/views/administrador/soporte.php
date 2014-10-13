@@ -17,12 +17,12 @@
 						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
 						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 							<fieldset>
-								<legend>Menú Estructural</legend>
+								<legend>Menú Soporte</legend>
 								<label>
-									<a href="<?php echo site_url('administrador/colonias'); ?>" class="btn btn-lg btn-block btn-azul">Colonias</a>
+									<a href="<?php echo site_url('administrador/presidentes_comite'); ?>" class="btn btn-lg btn-block btn-azul">Presidentes de comité de barrio</a>
 								</label>
 								<label>
-									<a href="<?php echo site_url('administrador/comites'); ?>" class="btn btn-lg btn-block btn-azul">Comites</a>
+									<a class="btn btn-lg btn-block btn-azul">Nueva</a>
 								</label>
 							</fieldset>
 						</div>

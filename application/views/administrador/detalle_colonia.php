@@ -14,61 +14,51 @@
 		</nav>
 		<section>
 			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
-						<center>
-							<div id="mensaje" class="alert alert-danger alert-dismissable mensaje"></div>
-						</center>
-					</div>
-				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<fieldset>
-						<legend>Registro de Colonia</legend>
+						<legend>Detalles de Colonia</legend>
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								<label for="estado">
-									<spam class="glyphicon glyphicon-asterisk requerido"></spam>Estado
+									Estado
 								</label>
-								<select onchange="getMunicipio(this.value)" id="estado">
-									<option value="">Selecciona Estado</option>
-									<?php foreach($estado->result() as $est){?>
-									<option value="<?php echo $est->Id?>"><?php echo $est->Nombre?></option>
-									<?php }?>
+								<select id="estado" disabled>
+									<option value=""><?php echo $detalle_colonia->estado;?></option>
 								</select>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								<label for="municipio">
-									<spam class="glyphicon glyphicon-asterisk requerido"></spam>Municipio
+									Municipio
 								</label>
-								<select onchange="getColonia1(this.value)" name="" id="municipio">
-									<option value="">Selecciona Municipio</option>
+								<select name="" id="municipio" disabled>
+									<option value=""><?php echo $detalle_colonia->municipio;?></option>
 								</select>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								<label for="colonia">
-									<spam class="glyphicon glyphicon-asterisk requerido"></spam>Colonia
+									Colonia
 								</label>
-								<select id="colonia">
-									<option value="">Selecciona Colonia</option>
+								<select id="colonia" disabled>
+									<option value=""><?php echo $detalle_colonia->colonia;?></option>
 								</select>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								<label for="fecha">Fecha Fundación</label>
-								<input type="text" id="fecha" readonly>
+								<input type="text" id="fecha" value="<?php echo $detalle_colonia->fundacion;?>" disabled>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								<label for="habit">Número de habitantes</label>
-								<input type="number" id="habit">
+								<input type="number" id="habit" value="<?php echo $detalle_colonia->habitantes;?>" disabled>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								<label for="ubicacion">Ubicación</label>
-								<input type="text" id="ubicacion">
+								<input type="text" id="ubicacion" value="<?php echo $detalle_colonia->ubicacion;?>" disabled>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								<label for="extencion">Extensión geográfica</label>
-								<input type="text" id="extencion">
+								<input type="text" id="extencion" value="<?php echo $detalle_colonia->extension;?>" disabled>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 								
@@ -77,9 +67,9 @@
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 								<label for="diagnostico">
-									<spam class="glyphicon glyphicon-asterisk requerido"></spam>Diagnóstico inicial
+									Diagnóstico inicial
 								</label>
-								<textarea name="" id="diagnostico" cols="30" rows="5"></textarea>
+								<textarea name="" id="diagnostico" cols="30" rows="5" disabled><?php echo $detalle_colonia->diagnostico;?></textarea>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 								<label for="">Croquis</label>
@@ -89,7 +79,7 @@
 						<div class="row">
 							<div class="col-xs-3 col-xs-offset-9 col-sm-3 col-sm-offset-9 col-md-3 col-md-offset-9 col-lg-3 col-lg-offset-9">
 								<label>
-									<input type="button" value="Guardar" id="registrar_colonia" class="btn-lg btn-azul derecha">
+									<input type="button" value="Guardar" id="registrar_colonia" class="btn-lg btn-azul derecha" disabled>
 								</label>
 							</div>
 						</div>
@@ -113,4 +103,3 @@
 		<script type="text/javascript" src="js/datepicker.js"></script>
 		<script type="text/javascript" src="js/datepicker.es.js"></script>
 		<script type="text/javascript" src="js/formatter.js"></script>
-		<script type="text/javascript" src="js/registrar_colonia.js"></script>

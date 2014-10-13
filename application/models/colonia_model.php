@@ -12,6 +12,14 @@ class Colonia_model extends CI_Model{
 						->row();
 	}
 
+	public function valida_colonia($id_colonia){
+		return $this->db->select('status')
+						->where('Id',$id_colonia)
+						->from('colonia')
+						->get()
+						->row();
+	}
+
 	public function registra_colonia($id_colonia,$FechaFun,$NumeroHabitantes,$ubicacion,$diagnostico,$extencion,$status){
 		return $this->db->set('FechaFun',$FechaFun)
 						->set('NumeroHabitantes',$NumeroHabitantes)

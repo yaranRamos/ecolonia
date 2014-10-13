@@ -6,32 +6,23 @@ class Colono_model extends CI_Model{
 	}
 
 	public function inserta_colono($Casa,$ApellidoPaterno,$ApellidoMaterno,$FechaNacimiento,$Estatura,$Nombre,$Peso,$Email,$Sexo,$Tel_celular){
-		return $this->db->set('Casa',$Casa)
-						->set('ApellidoPaterno',$ApellidoPaterno)
-						->set('ApellidoMaterno',$ApellidoMaterno)
-						->set('FechaNacimiento',$FechaNacimiento)
-						->set('Estatura',$Estatura)
-						->set('Nombre',$Nombre)
-						->set('Peso',$Peso)
-						->set('Email',$Email)
-						->set('Sexo',$Sexo)
-						->set('Tel_celular',$Tel_celular)
-						->insert('colono');
+		$this->db->set('Casa',$Casa)
+				 ->set('ApellidoPaterno',$ApellidoPaterno)
+				 ->set('ApellidoMaterno',$ApellidoMaterno)
+				 ->set('FechaNacimiento',$FechaNacimiento)
+				 ->set('Estatura',$Estatura)
+				 ->set('Nombre',$Nombre)
+				 ->set('Peso',$Peso)
+				 ->set('Email',$Email)
+				 ->set('Sexo',$Sexo)
+				 ->set('Tel_celular',$Tel_celular)
+				 ->insert('colono');
+		return $this->db->insert_id();
 	}
 
 	public function obtiene_id($Email,$Tel_celular) {
 		return $this->db->like('Email',$Email)
 						->like('Tel_celular',$Tel_celular)
-						->get('colono')
-						->row();
-	}
-
-	public function get_id($apellidoP,$apellidoM,$nombre,$casa){
-		return $this->db->select('Id')
-						->where('ApellidoPaterno',$apellidoP)
-						->where('ApellidoMaterno',$apellidoM)
-						->where('Nombre',$nombre)
-						->where('Casa',$casa)
 						->get('colono')
 						->row();
 	}

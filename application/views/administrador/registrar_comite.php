@@ -25,26 +25,17 @@
 					</div>
 				</div>
 				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
+						<center>
+							<div id="mensaje2" class="alert alert-danger alert-dismissable mensaje"></div>
+						</center>
+					</div>
+				</div>
+				<div class="row">
 					<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 						<fieldset>
-							<legend>Comite de barrio</legend>
+							<legend>Comité de barrio</legend>
 							<div class="row">
-								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-									<label for="comite">
-										<spam class="glyphicon glyphicon-asterisk requerido"></spam>Nombre
-									</label>
-									<input id="comite" type="text" />
-								</div>
-								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-									<label for="integrantes">No. de integrantes</label>
-									<input id="integrantes" type="text" />
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-									<label for="fundacion">Fecha de fundación</label>
-									<input id="fundacion" type="text" />
-								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 									<label for="estado">
 										<spam class="glyphicon glyphicon-asterisk requerido"></spam>Estado
@@ -56,8 +47,6 @@
 									<?php }?>
 									</select>
 								</div>
-							</div>
-							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 									<label for="municipio">
 										<spam class="glyphicon glyphicon-asterisk requerido"></spam>Municipio
@@ -66,6 +55,8 @@
 										<option value="">Selecciona Municipio</option>
 									</select>
 								</div>
+							</div>
+							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 									<label for="colonia">
 										<spam class="glyphicon glyphicon-asterisk requerido"></spam>Colonia
@@ -74,12 +65,29 @@
 										<option value="">Selecciona Colonia</option>
 									</select>	
 								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label for="comite">
+										<spam class="glyphicon glyphicon-asterisk requerido"></spam>Nombre
+									</label>
+									<input id="comite" type="text" />
+								</div>
+								
+							</div>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label for="integrantes">No. de integrantes</label>
+									<input id="integrantes" type="text" />
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label for="fundacion">Fecha de fundación</label>
+									<input id="fundacion" type="text" readonly/>
+								</div>
 							</div>
 						</fieldset>
 					</div>
 					<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
 						<fieldset class="panel">
-							<legend>Presidente del Comite</legend>
+							<legend>Presidente del Comité</legend>
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 									<label for="nombre">
@@ -97,7 +105,7 @@
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 									<label for="amaterno">
-										<spam class="glyphicon glyphicon-asterisk requerido"></spam>Apellido Materno
+										<spam class="glyphicon requerido"></spam>Apellido Materno
 									</label>
 									<input id="amaterno" type="text" />
 								</div>

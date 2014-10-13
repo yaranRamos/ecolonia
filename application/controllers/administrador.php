@@ -2,6 +2,8 @@
 
 class Administrador extends CI_Controller {
 
+	private $estados;
+
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('casa_model');
@@ -11,16 +13,17 @@ class Administrador extends CI_Controller {
 		$this->load->model('calle_model');
 		$this->load->model('comitecolono_model');
 		$this->load->model('estado_model');
+		$this->load->model('especial_model');
 		$this->load->model('municipio_model');
 		$this->load->model('usuario_model');
 		$this->load->model('colono_usuario_model');
+		$this->estados = $estados = $this->estado_model->get_estados();
 	}
 
 	public function index()	{
 		if($this->session->userdata('tipo')==1){
-			$this->load->view('administrador/header');
-			$this->load->view('administrador/menu');
-			$this->load->view('administrador/footer');
+			$data['contenido'] = "administrador/menu";
+			$this->load->view('administrador/template',$data);
 		} else{
 			$this->session->sess_destroy();
 			redirect('ecolonia');
@@ -29,9 +32,8 @@ class Administrador extends CI_Controller {
 
 	public function estructura(){
 		if($this->session->userdata('tipo')==1){
-			$this->load->view('administrador/header');
-			$this->load->view('administrador/estructura');
-			$this->load->view('administrador/footer');
+			$data['contenido'] = "administrador/estructura";
+			$this->load->view('administrador/template',$data);
 		} else{
 			$this->session->sess_destroy();
 			redirect('ecolonia');
@@ -40,14 +42,9 @@ class Administrador extends CI_Controller {
 
 	public function comites(){
 		if($this->session->userdata('tipo')==1){
-			// Obtenemos estados y los mandamos a la vista
-			$estados = $this->estado_model->get_estados();
-			$data = array(
-				'estado' => $estados
-			);
-	$this->load->view('administrador/header');
-			$this->load->view('administrador/comites',$data); 
-			$this->load->view('administrador/footer');
+			$data['contenido'] = "administrador/comites";
+			$data['estado'] = $this->estados;
+			$this->load->view('administrador/template',$data);
 		} else{
 			$this->session->sess_destroy();
 			redirect('ecolonia');
@@ -56,30 +53,38 @@ class Administrador extends CI_Controller {
 
 	public function registrar_comite(){
 		if($this->session->userdata('tipo')==1){
-			// Obtenemos estados y los mandamos a la vista
-			$estados = $this->estado_model->get_estados();
-			$data = array(
-				'estado' => $estados
-			);
-			$this->load->view('administrador/header');
-			$this->load->view('administrador/registrar_comite',$data);
-			$this->load->view('administrador/footer');
+			$data['contenido'] = "administrador/registrar_comite";
+			$data['estado'] = $this->estados;
+			$this->load->view('administrador/template',$data);
 		} else{
 			$this->session->sess_destroy();
 			redirect('ecolonia');
 		}
 	}
 
+	public function valida_comite(){
+		if($this->session->userdata('tipo') ==1){
+			if($this->input->post()){
+				$colonia = $this->input->post('colonia');
+				$nombre = $this->input->post('nombre');
+				$valida = $this->comite_model->valida_comite($colonia,$nombre);
+				if(is_object($valida)){
+					echo json_encode(true);
+				}else{
+					echo json_encode(false);
+				}
+			}
+		}else{
+			$this->session->sess_destroy();
+			echo json_encode(false);
+		}
+	}
+
 	public function colonias(){
 		if($this->session->userdata('tipo')==1){
-			// Obtenemos estados y los mandamos a la vista
-			$estados = $this->estado_model->get_estados();
-			$data = array(
-				'estado' => $estados
-			);
-			$this->load->view('administrador/header');
-			$this->load->view('administrador/colonias',$data); 
-			$this->load->view('administrador/footer');
+			$data['contenido'] = "administrador/colonias";
+			$data['estado'] = $this->estados;
+			$this->load->view('administrador/template',$data);
 		} else{
 			$this->session->sess_destroy();
 			redirect('ecolonia');
@@ -88,14 +93,9 @@ class Administrador extends CI_Controller {
 
 	public function registrar_colonia(){
 		if($this->session->userdata('tipo')==1){
-			// Obtenemos estados y los mandamos a la vista
-			$estados = $this->estado_model->get_estados();
-			$data = array(
-				'estado' => $estados
-			);
-			$this->load->view('administrador/header');
-			$this->load->view('administrador/registrar_colonia',$data); 
-			$this->load->view('administrador/footer');
+			$data['contenido'] = "administrador/registrar_colonia";
+			$data['estado'] = $this->estados;
+			$this->load->view('administrador/template',$data);
 		} else{
 			$this->session->sess_destroy();
 			redirect('ecolonia');
@@ -123,33 +123,61 @@ class Administrador extends CI_Controller {
 		}
 	}
 
+	public function valida_colonia(){
+		if($this->session->userdata('tipo')==1){
+			if($this->input->post()){
+				$id_colonia = $this->input->post('id');
+				$status = 0;
+				$valida = $this->colonia_model->valida_colonia($id_colonia);
+				if($valida->status == 0){
+					echo json_encode(true);
+				}else{
+					echo json_encode(false);
+				}
+			}
+		}else{
+			$this->session->sess_destroy();
+			echo json_encode(false);
+		}
+	}
+
+	public function detalle_colonia(){
+		if($this->session->userdata('tipo')==1){
+			if($this->input->post()){
+				$colonia = $this->input->post('colonia');
+				$data['detalle_colonia'] = $this->especial_model->detalle_colonia($colonia);
+				$data['contenido'] = 'administrador/detalle_colonia';
+				$this->load->view('administrador/template',$data);
+			}else{
+				$this->session->sess_destroy();	
+			}		
+		}else{
+			$this->session->sess_destroy();
+		}
+	}
+
 	public function inserta_comite(){
 		if($this->session->userdata('tipo')==1){
 			if ($this->input->post()) {
-				$estado=$this->input->post('estado');
-				$municipio=$this->input->post('municipio');
-				$colonia=$this->input->post('colonia');
+				$estado = $this->input->post('estado');
+				$municipio = $this->input->post('municipio');
+				$colonia = $this->input->post('colonia');
 				//insertar datos del comite
-				$comites=$this->comite_model->registra_comite($colonia,
+				$id_comite = $this->comite_model->registra_comite($colonia,
 													 $this->input->post('fundacion'),
 													 $this->input->post('comite'),
 													 $this->input->post('integrantes'));
-				if($comites){
-					$resultado = $this->comite_model->obtiene_id($this->input->post('comite'),$this->input->post('integrantes'));
-					$id_comite = $resultado->Id;
+				if($id_comite){
 					//insertar datos de la casa
-					$familia=$this->input->post('apaterno');
-					$calle=$this->input->post('calle');
+					$familia = $this->input->post('apaterno');
+					$calle = $this->input->post('calle');
+				
 					//insertar calle de la colonia
-				    $this->calle_model->registra_calle($calle,$colonia);
-				    $id_calle = $this->calle_model->obtiene_id($calle,$colonia);
-				    $id_calleB = $id_calle->Id;
-					$numero=$this->input->post('numero');
+				    $id_calle = $this->calle_model->registra_calle($calle,$colonia);
+					$numero = $this->input->post('numero');
 					$tel_casa = "";
-					$this->casa_model->registra_casa($id_calleB,$colonia,$familia,$numero,$tel_casa);
-					$casa = $this->casa_model->obtener_id($id_calleB,$colonia,$familia,$numero,$tel_casa);
-					$Casa = $casa->id;
-					
+					$Casa = $this->casa_model->registra_casa($id_calle,$colonia,$familia,$numero,$tel_casa);
+
 					//insertar datos del colono
 					$ApellidoPaterno = $this->input->post('apaterno');
 					$ApellidoMaterno = $this->input->post('amaterno');
@@ -160,11 +188,10 @@ class Administrador extends CI_Controller {
 					$Email = $this->input->post('correo');
 					$Sexo = $this->input->post('sexo');
 					$Tel_celular = $this->input->post('cel');
-					$this->colono_model->inserta_colono($Casa,$ApellidoPaterno,$ApellidoMaterno,$FechaNacimiento,$Estatura,$Nombre,$Peso,$Email,$Sexo,$Tel_celular);
-					$colono = $this->colono_model->get_id($ApellidoPaterno,$ApellidoMaterno,$Nombre,$Casa);
-					$id_colono = $colono->Id;
+					$id_colono = $this->colono_model->inserta_colono($Casa,$ApellidoPaterno,$ApellidoMaterno,$FechaNacimiento,$Estatura,$Nombre,$Peso,$Email,$Sexo,$Tel_celular);
+		
 					//insertar presidente de comite
-					$Puesto=1;
+					$Puesto=1; // representa puesto de presidente de comite de barrio
 					$presidente = $this->comitecolono_model->registra_miembro($id_comite,$id_colono,$Puesto);
 					//insertat presidente en usuario
 					$usuario = $Nombre.$ApellidoPaterno;
@@ -198,12 +225,26 @@ class Administrador extends CI_Controller {
 					echo json_encode($presidente);
 				}
 			} else{
-				$resp = false;
-				echo json_encode($resp);
+				echo json_encode(false);
 			}
 		} else{
 			$this->session->sess_destroy();
 			redirect('ecolonia');
+		}
+	}
+
+	public function detalle_comite(){
+		if($this->session->userdata('tipo')==1){
+			if($this->input->post()){
+				$comite = $this->input->post('comite');
+				$data['detalle_comite'] = $this->especial_model->detalle_comite($comite);
+				$data['contenido'] = 'administrador/detalle_comite';
+				$this->load->view('administrador/template',$data);
+			}else{
+				$this->session->sess_destroy();
+			}
+		}else{
+			$this->session->sess_destroy();
 		}
 	}
 	
@@ -252,6 +293,59 @@ class Administrador extends CI_Controller {
 			$id_municipio = $this->input->post('municipio_id');
 			$comites = $this->comite_model->get_comites($id_municipio);
 			echo json_encode($comites);
+		}else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function soporte(){
+		if($this->session->userdata('tipo')==1){
+			$data['contenido'] = "administrador/soporte";
+			$this->load->view('administrador/template',$data);
+		} else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function presidentes_comite(){
+		if($this->session->userdata('tipo')==1){
+			$data['contenido'] = "administrador/presidentes_comite";
+			$this->load->view('administrador/template',$data);
+		}else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function get_presidentes(){
+		if($this->session->userdata('tipo')==1){
+			$presidente = $this->especial_model->get_presidentes();
+			echo json_encode($presidente);
+		}else{
+			$this->session->sess_destroy();
+			redirect('ecolonia');
+		}
+	}
+
+	public function valida_presidente(){
+		if($this->session->userdata('tipo')==1){
+			if($this->input->post()){
+				$Nombre = $this->input->post('nombre');
+				$ApellidoPaterno = $this->input->post('apaterno');
+				$ApellidoMaterno = $this->input->post('amaterno');
+				$puesto = 1; // presidente
+				$status = 1; // activo
+				$existe = $this->especial_model->valida_presidente($Nombre,$ApellidoPaterno,$ApellidoMaterno,$puesto,$status);
+				if(is_object($existe)){
+					echo json_encode(true);
+				}else{
+					echo json_encode(false);
+				}
+			}else{
+				$this->session->sess_destroy();
+			}
 		}else{
 			$this->session->sess_destroy();
 			redirect('ecolonia');

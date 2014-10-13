@@ -21,7 +21,7 @@ class Usuario_model extends CI_Model{
 		if($consulta == true){
 			$consulta = $this->db->set('Nombre',$usuario)
 						->set('Password',$contrasena)
-						->set('rol_Id',5)
+						->set('rol_Id',6)
 						->insert('usuario');
 		}
 		return $consulta;

@@ -4,21 +4,22 @@ class Ecolonia extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('rol_model');
 		$this->load->model('usuario_model');
 		$this->load->model('especial_model');
 	}
 
 	public function index(){
-		$this->load->view('home/header');
-		$this->load->view('home/inicio');
-		$this->load->view('home/footer');
+		$data['contenido'] = "home/inicio";
+		$this->load->view('home/template',$data);
 	}
 
 	public function iniciar_sesion(){
-		$data = array('mensaje' => "");
-		$this->load->view('home/header');
-		$this->load->view('home/iniciar_sesion',$data);
-		$this->load->view('home/footer'); 
+
+		$data['contenido'] = "home/iniciar_sesion";
+		$data['mensaje'] = "";
+		$data['roles'] = $this->rol_model->getall();
+		$this->load->view('home/template',$data);
 	}
 	
 	public function logueo(){
@@ -46,17 +47,16 @@ class Ecolonia extends CI_Controller {
 					redirect('representante_calle');
 				} elseif($tipo == 5){
 					$id_casa = $this->especial_model->get_id_casa($usuario, $contrasena, $tipo);
-					//exit($id_casa);
 					$this->session->set_userdata('casa',$id_casa->Id_casa);
 					redirect('colono');
 				} else{
 					redirect('ecolonia/iniciar_sesion');
 				}
 			} else{
-				$data = array('mensaje' => "Usuario no valido");
-				$this->load->view('home/header');
-				$this->load->view('home/iniciar_sesion',$data);
-				$this->load->view('home/footer'); 
+				$data['contenido'] = "home/iniciar_sesion";
+				$data['mensaje'] = "Usuario no válido";
+				$data['roles'] = $this->rol_model->getall();
+				$this->load->view('home/template',$data);
 			}	
 		}else{
 			redirect('ecolonia/iniciar_sesion');

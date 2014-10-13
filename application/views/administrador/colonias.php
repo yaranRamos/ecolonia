@@ -44,8 +44,8 @@
 													<th>Nombre</th>
 													<th>Fecha Fundación</th>
 													<th>No. Habitantes</th>
-													<th>Ubicación</th>
 													<th>Diagnostico Inicial</th>
+													<th>Acciones</th>
 									            </tr>
 									        </thead>
 									        <tbody>
@@ -66,23 +66,27 @@
 		</section>
 		<script type="text/javascript" src="js/jquery.dataTables.js"></script>
 		<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
+		<script type="text/javascript" src="js/registrar_colonia.js"></script>
 		<script>
 			$(document).ready(function() {
 			    $('#example').dataTable();
 			} );
+
 			$('#municipio').change(function(){
 				var id = $('#municipio').val();
 				if(id != ""){
 					$.ajax({
 						type: "POST",
-						url: "http://localhost/ecolonia/index.php/administrador/get_colonias",
+						url: "http://localhost/php/ecolonia/index.php/administrador/get_colonias",
 						data:{municipio_id:id},
 						success: function(msg){
 							var datos = jQuery.parseJSON(msg);
 							var cadena = "";
-							cadena += "<table id='"+id+"' class='table table-hover'><thead><tr><th>Nombre</th><th>Fecha Fundación</th><th>No. Habitantes</th><th>Ubicación</th><th>Diagnostico Inicial</th></tr></thead><tbody>";
+							var fecha;
+							cadena += "<table id='"+id+"' class='table table-hover'><thead><tr><th>Nombre</th><th>Fecha Fundación</th><th>No. Habitantes</th><th>Diagnostico Inicial</th><th>Acciones</th></tr></thead><tbody>";
 							for(var i = 0; i < datos.length; i++){
-								cadena += "<tr><td>"+datos[i].Nombre+"</td><td>"+datos[i].FechaFun+"</td><td>"+datos[i].NumeroHabitantes+"</td><td>"+datos[i].Ubicacion+"</td><td>"+datos[i].Diagnostico_inicial+"</td></tr>"
+								fecha = datos[i].FechaFun.split("-");
+								cadena += "<tr><td>"+datos[i].Nombre+"</td><td>"+fecha[2]+"-"+fecha[1]+"-"+fecha[0]+"</td><td>"+datos[i].NumeroHabitantes+"</td><td>"+datos[i].Diagnostico_inicial+"</td><td><form action='<?php echo site_url('administrador/detalle_colonia');?>' method='post'><input type='hidden' name='colonia' value="+datos[i].Id+"><center><span class='detalles'><button type='submit' class='btn btn-success view'><i class='fa fa-pencil'></i></button></span></center></form></td></tr>"
 							}
 							cadena += "</tbody></table>";
 							$('#tabla').html(cadena);

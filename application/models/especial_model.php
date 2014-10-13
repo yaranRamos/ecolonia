@@ -7,15 +7,15 @@ class Especial_model extends CI_Model{
 
 	public function usuario_colono_casa($usuario, $contrasena, $tipo){
 		return $this->db->select('casa.Colonia as colonia')
-				 ->from('usuario')
-				 ->join('colono_has_usuario','usuario.Id = colono_has_usuario.usuario_id')
-				 ->join('colono','colono_has_usuario.colono_Id = colono.Id')
-				 ->join('casa','colono.Casa = casa.Id')
-				 ->where('usuario.Nombre',$usuario)
-				 ->where('usuario.Password',$contrasena)
-				 ->where('usuario.rol_Id',$tipo)
-				 ->get()
-				 ->row();
+						->from('usuario')
+						->join('colono_has_usuario','usuario.Id = colono_has_usuario.usuario_id')
+						->join('colono','colono_has_usuario.colono_Id = colono.Id')
+						->join('casa','colono.Casa = casa.Id')
+						->where('usuario.Nombre',$usuario)
+						->where('usuario.Password',$contrasena)
+						->where('usuario.rol_Id',$tipo)
+						->get()
+						->row();
 	}
 
 	public function usuario_cu_comitebarrio($usuario, $contrasena, $tipo){
@@ -91,5 +91,72 @@ class Especial_model extends CI_Model{
 						->where('callcol.comitedebarrio_Id',$comite)
 						->get()
 						->result();
+	}
+
+	public function get_presidentes(){
+		return $this->db->select('cb.Nombre as nombre_comite')
+						->select('cl.Nombre as nombre_colonia')
+						->select('c.Nombre as nombre_colono')
+						->select('c.ApellidoPaterno as ApellidoPaterno')
+						->select('c.ApellidoMaterno as ApellidoMaterno')
+						->select('usr.Nombre as nombre_usuario')
+						->select('usr.Password as password_usuario')
+						->select('c_has_c.status as status_presidente')
+						->from('comitedebarrio as cb')
+						->join('comitedebarrio_has_colono as c_has_c','cb.Id = c_has_c.comitedebarrio_Id')
+						->join('colono as c','c_has_c.colono_Id = c.Id')
+						->join('colonia as cl','cb.Colonia = cl.Id')
+						->join('colono_has_usuario as c_has_u','c.Id = c_has_u.colono_Id')
+						->join('usuario as usr','c_has_u.usuario_Id = usr.Id')
+						->where('c_has_c.Puesto', 1)
+						->where('usr.rol_Id',2)
+						->get()
+						->result();
+	}
+
+	public function detalle_colonia($colonia){
+		return $this->db->select('est.Nombre as estado')
+						->select('mun.Nombre as municipio')
+						->select('col.Nombre as colonia')
+						->select('col.FechaFun as fundacion')
+						->select('col.NumeroHabitantes as habitantes')
+						->select('col.ubicacion as ubicacion')
+						->select('col.Extension_Geografica as extension')
+						->select('col.Diagnostico_inicial as diagnostico')
+						->from('colonia as col')
+						->join('municipio as mun','col.Municipio = mun.Id')
+						->join('estado as est','mun.Estado = est.Id')
+						->where('col.Id',$colonia)
+						->get()
+						->row();
+	}
+
+	public function detalle_comite($comite){
+		return $this->db->select('est.Nombre as estado')
+						->select('mun.Nombre as municipio')
+						->select('col.Nombre as colonia')
+						->select('cb.Nombre as comite')
+						->select('cb.Numero_Integrantes as integrantes')
+						->select('cb.FechaFundacion as fundacion')
+						->from('comitedebarrio as cb')
+						->join('colonia as col','cb.Colonia = col.Id')
+						->join('municipio as mun','col.Municipio = mun.Id')
+						->join('estado as est','mun.Estado = est.Id')
+						->where('cb.Id',$comite)
+						->get()
+						->row();
+	}
+
+	public function valida_presidente($Nombre,$ApellidoPaterno,$ApellidoMaterno,$puesto,$status){
+		return $this->db->from('comitedebarrio as cb')
+						->join('comitedebarrio_has_colono as cb_c','cb.Id = cb_c.comitedebarrio_Id')
+						->join('colono as c ','cb_c.colono_Id = c.Id')
+						->where('c.Nombre',$Nombre)
+						->where('c.ApellidoPaterno',$ApellidoPaterno)
+						->where('c.ApellidoMaterno',$ApellidoMaterno)
+						->where('cb_c.Puesto',$puesto)
+						->where('cb_c.status',$status)
+						->get()
+						->row();
 	}
 }

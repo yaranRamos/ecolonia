@@ -104,13 +104,13 @@
 						</fieldset>
 					</div>
 					<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-						<fieldset class="menu">
+						<fieldset class="menu" id="soporte">
 							<center>
-								<form action="">
+								<form id="form_soporte" action="<?php echo site_url('administrador/soporte'); ?>" method="POST">
 									<img class="img-menu" src="media/iconos/iconayuda.png">
-									<h3>AYUDA</h3>
+									<h3>SOPORTE</h3>
 									<p class="text-menu">
-										
+										Panel de ayuda. 
 									</p>
 								</form>
 							</center>
@@ -122,5 +122,8 @@
 		<script>
 			$('#estructural').click(function(){
 				$('#form_estructura').submit();
+			});
+			$('#soporte').click(function(){
+				$('#form_soporte').submit();
 			});
 		</script>

@@ -21,12 +21,9 @@
 									<input type="password" name="password">
 									<label for="">Tipo de usuario</label>
 									<select name="tipo_usuario" id="tipo_usuario">
-										<option value="">Seleccione una opcion</option>
-										<option value="1">Administrador</option>
-										<option value="2">Presidente CB</option>
-										<option value="3">Miembros CB</option>
-										<option value="4">Representante de Calle</option>
-										<option value="5">Colono</option>
+										<?php foreach($roles as $rol){ ?>
+											<option value="<?php echo $rol->Id;?>"><?php echo $rol->Nombre;?></option>
+										<?php } ?>
 									</select>
 									<label>
 										<input type="submit" value="Iniciar" class="btn-lg btn-block btn-azul">

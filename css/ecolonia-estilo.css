@@ -417,3 +417,48 @@ input[type='button']:disabled {
 .btn-remove:hover{
   color:#E3534B;
 }
+
+.mensaje{
+   visibility: hidden;
+}
+
+.box-status{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-left: 10px;
+}
+
+#vigente, .statustrue{
+  background-color: #DFF0D8;
+}
+
+#no-vigente, .statusfalse{
+  background-color: #F2DEDE;
+}
+
+.row-comite{
+  cursor: pointer;
+}
+
+.detalles{
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.view, .delete{
+  background: #FFFFFF;
+  font-size: 17px !important;
+  margin-left: 5px;
+}
+
+.view:hover{
+  color: #47639E;
+  cursor: pointer;
+} 
+
+.delete:hover{
+  color: red;
+  cursor: pointer;
+}

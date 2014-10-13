@@ -45,6 +45,7 @@
 													<th>Fecha Fundación</th>
 													<th>No. Integrantes</th>
 													<th>Fecha Terminacion</th>
+													<th>Acciones</th>
 									            </tr>
 									        </thead>
 									        <tbody>
@@ -74,14 +75,16 @@
 				if(id != ""){
 					$.ajax({
 						type: "POST",
-						url: "http://localhost/ecolonia/index.php/administrador/get_comites",
+						url: "http://localhost/php/ecolonia/index.php/administrador/get_comites",
 						data:{municipio_id:id},
 						success: function(msg){
 							var datos = jQuery.parseJSON(msg);
 							var cadena = "";
-							cadena += "<table id='"+id+"' class='table table-hover'><thead><tr><th>Nombre</th><th>Fecha Fundación</th><th>No. Integrantes</th><th>Fecha Terminacion</th></tr></thead><tbody>";
+							var fecha;
+							cadena += "<table id='"+id+"' class='table table-hover row-comite'><thead><tr><th>Nombre</th><th>Fecha Fundación</th><th>No. Integrantes</th><th>Fecha Terminacion</th><th>Acciones</th></tr></thead><tbody>";
 							for(var i = 0; i < datos.length; i++){
-								cadena += "<tr><td>"+datos[i].nombre+"</td><td>"+datos[i].fechaFundacion+"</td><td>"+datos[i].numeroIntegrantes+"</td><td>"+datos[i].fechaTerminacion+"</td></tr>"
+								fecha = datos[i].fechaFundacion.split("-");
+								cadena += "<tr><td>"+datos[i].nombre+"</td><td>"+fecha[2]+"-"+fecha[1]+"-"+fecha[0]+"</td><td>"+datos[i].numeroIntegrantes+"</td><td>"+datos[i].fechaTerminacion+"</td><td><form action='<?php echo site_url('administrador/detalle_comite');?>' method='post'><input type='hidden' name='comite' value="+datos[i].Id+"><center><span class='detalles'><button type='submit' class='btn btn-success view'><i class='fa fa-pencil'></i></button></span></center></form></td></tr>"
 							}
 							cadena += "</tbody></table>";
 							$('#tabla').html(cadena);
@@ -89,7 +92,6 @@
 						}
 					});
 				}
-				
 			});
 		</script>
 		<div class="modal dialogo fade" id="alert">
